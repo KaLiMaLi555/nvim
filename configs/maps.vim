@@ -10,3 +10,5 @@ nnoremap <leader>s :w <bar> :source %<CR>
 " Navigating across vim buffers
 nnoremap <C-K> :bnext<CR>
 nnoremap <C-J> :bprevious<CR>
+
+nmap <C-W> :bd<CR>

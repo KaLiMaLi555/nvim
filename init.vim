@@ -19,5 +19,8 @@ source ~/.config/nvim/plug-config/fzf.vim
 " Vim fugitive
 source ~/.config/nvim/plug-config/fugitive.vim
 
+" Airline
+source ~/.config/nvim/plug-config/airline.vim
+
 " Themes
 source ~/.config/nvim/theme/config.vim
