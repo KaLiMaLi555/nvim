@@ -33,7 +33,10 @@ Plug '907th/vim-auto-save'
 
 Plug 'preservim/nerdtree'
 
+Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/gv.vim'
 
 Plug 'mhinz/vim-startify'
 

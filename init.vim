@@ -16,8 +16,8 @@ source ~/.config/nvim/plug-config/startify.vim
 " Fzf
 source ~/.config/nvim/plug-config/fzf.vim
 
-" Vim fugitive
-source ~/.config/nvim/plug-config/fugitive.vim
+" Vim Git Integrations
+source ~/.config/nvim/plug-config/git.vim
 
 " Airline
 source ~/.config/nvim/plug-config/airline.vim
