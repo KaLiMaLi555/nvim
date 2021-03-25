@@ -27,7 +27,7 @@ Plug 'bronson/vim-trailing-whitespace'
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
 
 Plug '907th/vim-auto-save'
 
