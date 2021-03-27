@@ -40,4 +40,6 @@ Plug 'junegunn/gv.vim'
 
 Plug 'mhinz/vim-startify'
 
+Plug 'petRUShka/vim-sage'
+
 call plug#end()
