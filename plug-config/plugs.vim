@@ -42,4 +42,10 @@ Plug 'mhinz/vim-startify'
 
 Plug 'petRUShka/vim-sage'
 
+Plug 'dbeniamine/cheat.sh-vim'
+
+Plug 'sillybun/vim-repl'
+
+Plug 'szw/vim-maximizer'
+
 call plug#end()
