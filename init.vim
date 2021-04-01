@@ -7,6 +7,9 @@ source ~/.config/nvim/configs/lets.vim
 " Maps
 source ~/.config/nvim/configs/maps.vim
 
+" Maps
+source ~/.config/nvim/configs/auto.vim
+
 " General Pluggin Configs
 source ~/.config/nvim/plug-config/general.vim
 

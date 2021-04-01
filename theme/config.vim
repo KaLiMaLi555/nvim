@@ -1,7 +1,7 @@
 """"""""""""""""""""""""
 " Colors               "
 """"""""""""""""""""""""
-colorscheme gruvbox
+        colorscheme gruvbox
 set background=dark
 set t_Co=255
 set laststatus=2
@@ -21,6 +21,7 @@ set number relativenumber cursorline wildmenu showmatch showcmd nowrap
 set statusline^=%{coc#status()}
 set scrolloff=8
 set modifiable
+let g:AutoPairsFlyMode = 1
 
 
 """"""""""""""""""""""""
