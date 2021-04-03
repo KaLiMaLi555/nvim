@@ -18,10 +18,6 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'tpope/vim-surround'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'airblade/vim-rooter'
-
 Plug 'bronson/vim-trailing-whitespace'
 
 Plug 'jiangmiao/auto-pairs'
@@ -53,5 +49,10 @@ Plug 'glts/vim-magnum'
 Plug 'glts/vim-radical'
 
 Plug 'ryanoasis/vim-devicons'
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 call plug#end()
