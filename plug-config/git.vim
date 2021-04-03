@@ -5,7 +5,7 @@ let g:signify_sign_add               = '+'
 let g:signify_sign_delete            = '_'
 let g:signify_sign_delete_first_line = '‾'
 let g:signify_sign_change            = '~'
-set updatetime=100
+set updatetime=10
 
 
 """"""""""""""""""""""""
@@ -32,6 +32,7 @@ nmap <leader>gf :diffget //2<CR>
 nmap <leader>gc :Git commit<CR>
 nmap <leader>gp :Git push<CR>
 nmap <leader>gr :Git restore %<CR>
+nmap <leader>gd :Git diff %<CR>
 
 
 " If you like colors instead

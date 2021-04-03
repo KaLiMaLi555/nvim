@@ -49,4 +49,9 @@ Plug 'szw/vim-maximizer'
 
 Plug 'voldikss/vim-floaterm'
 
+Plug 'glts/vim-magnum'
+Plug 'glts/vim-radical'
+
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()

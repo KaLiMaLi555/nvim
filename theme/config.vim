@@ -1,7 +1,7 @@
 """"""""""""""""""""""""
 " Colors               "
 """"""""""""""""""""""""
-        colorscheme gruvbox
+colorscheme gruvbox
 set background=dark
 set t_Co=255
 set laststatus=2

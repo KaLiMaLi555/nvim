@@ -19,6 +19,9 @@ source ~/.config/nvim/plug-config/startify.vim
 " Fzf
 source ~/.config/nvim/plug-config/fzf.vim
 
+" Floaterm
+source ~/.config/nvim/plug-config/floaterm.vim
+
 " Vim Git Integrations
 source ~/.config/nvim/plug-config/git.vim
 

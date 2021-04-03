@@ -7,5 +7,3 @@ augroup maintain_indents
     autocmd FileType js :normal gg=G``
     autocmd BufWritePre *.vim :normal gg=G``
 augroup END
-
-autocmd BufWritePre * :FixWhiteSpace
