@@ -46,6 +46,7 @@ Plug 'voldikss/vim-floaterm'
 Plug 'glts/vim-magnum'
 Plug 'glts/vim-radical'
 
+Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'nvim-lua/popup.nvim'

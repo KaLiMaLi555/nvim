@@ -31,6 +31,9 @@ source ~/.config/nvim/plug-config/airline.vim
 " Themes
 source ~/.config/nvim/theme/config.vim
 
+" Ranger
+source ~/.config/nvim/plug-config/rnvimr.vim
+
 " LSP native
 source ~/.config/nvim/plug-config/lsp-config.vim
 
