@@ -31,4 +31,7 @@ source ~/.config/nvim/plug-config/airline.vim
 " Themes
 source ~/.config/nvim/theme/config.vim
 
+" LSP native
+source ~/.config/nvim/plug-config/lsp-config.vim
+
 lua require("kalimali")
