@@ -30,3 +30,6 @@ source ~/.config/nvim/plug-config/airline.vim
 
 " Themes
 source ~/.config/nvim/theme/config.vim
+
+" Ranger
+source ~/.config/nvim/plug-config/rnvimr.vim
