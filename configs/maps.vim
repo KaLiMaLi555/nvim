@@ -11,6 +11,6 @@ nnoremap <leader>s :w <bar> :source % <bar> :PlugInstall <CR>
 nnoremap <C-K> :bnext<CR>
 nnoremap <C-J> :bprevious<CR>
 
-" nmap <C-W> :bd<CR>
+nnoremap <S-W> :bd<CR>
 
 nmap <leader>p viwp<CR>
