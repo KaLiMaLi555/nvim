@@ -5,7 +5,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 
 " Mapping for saving and sourcing vim-init
-nnoremap <leader>s :w <bar> :source % <bar> :PlugInstall <CR>
+nnoremap <leader>s :w <bar> :source %<CR>
 
 " Navigating across vim buffers
 nnoremap <C-K> :bnext<CR>

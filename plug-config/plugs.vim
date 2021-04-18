@@ -3,7 +3,7 @@
 """"""""""""""""""""""""
 call plug#begin()
 
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'connorholyday/vim-snazzy'
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
@@ -55,7 +55,11 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-compe'
+Plug 'nvim-lua/completion-nvim'
+Plug 'tjdevries/nlua.nvim'
+
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 
 Plug 'dstein64/vim-startuptime'
 
