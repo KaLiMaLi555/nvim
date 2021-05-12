@@ -2,8 +2,11 @@ local actions = require('telescope.actions')
 require('telescope').setup {
     defaults = {
         file_sorter = require('telescope.sorters').get_fzy_sorter,
-        prompt_prefix = ' >',
+        prompt_position = "top",
+        prompt_prefix = ' ~ ',
+        selection_caret = ' => ',
         color_devicons = true,
+        borderchars = { '─', '│', '─', '│', '╭', '╮', '╯', '╰' },
 
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
