@@ -2,7 +2,9 @@ local actions = require('telescope.actions')
 require('telescope').setup {
     defaults = {
         file_sorter = require('telescope.sorters').get_fzy_sorter,
-        prompt_position = "top",
+        layout_config = {
+            prompt_position = "bottom",
+        },
         prompt_prefix = ' ~ ',
         selection_caret = ' => ',
         color_devicons = true,

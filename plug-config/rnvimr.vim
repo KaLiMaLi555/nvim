@@ -13,5 +13,5 @@ let g:rnvimr_ranger_cmd = 'ranger --cmd="set draw_borders both"'
 " Link CursorLine into RnvimrNormal highlight in the Floating window
 highlight link RnvimrNormal CursorLine
 
-nnoremap <silent> <M-r> :RnvimrToggle<CR>
-tnoremap <silent> <M-r> <C-\><C-n>:RnvimrToggle<CR>
+nnoremap <silent> <leader>r :RnvimrToggle<CR>
+tnoremap <silent> <leader>r <C-\><C-n>:RnvimrToggle<CR>
