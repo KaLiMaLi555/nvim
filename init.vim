@@ -1,4 +1,4 @@
-" Plugins
+" Pinis
 source ~/.config/nvim/plug-config/plugs.vim
 
 " Lets

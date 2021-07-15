@@ -1,3 +1,7 @@
+let g:completion_chain_complete_list = {
+    \'TelescopePrompt' : [ ]
+    \}
+
 " lsp config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>

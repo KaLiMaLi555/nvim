@@ -14,4 +14,4 @@ let g:rnvimr_ranger_cmd = 'ranger --cmd="set draw_borders both"'
 highlight link RnvimrNormal CursorLine
 
 nnoremap <silent> <leader>r :RnvimrToggle<CR>
-tnoremap <silent> <leader>r <C-\><C-n>:RnvimrToggle<CR>
+" tnoremap <silent> <leader>r <C-\><C-n>:RnvimrToggle<CR>

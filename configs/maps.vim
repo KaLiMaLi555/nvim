@@ -13,4 +13,4 @@ nnoremap <C-J> :bprevious<CR>
 
 nnoremap <S-W> :bd<CR>
 
-nmap <leader>p viwp<CR>
+nmap <S-P> viwp<CR>
