@@ -19,6 +19,9 @@ require('telescope').setup {
                 ["<C-x>"] = false,
                 ["<C-q>"] = actions.send_to_qflist,
             },
+            n = {
+                ["q"] = actions.close
+            }
         }
     },
     extensions = {

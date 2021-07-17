@@ -1,7 +1,10 @@
 lua require("kalimali")
 
-nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
-nnoremap <leader>pm :lua require('telescope.builtin').marks()<CR>
+nnoremap <silent> ;l :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
+nnoremap <silent> ;r <Cmd>Telescope live_grep<CR>
+nnoremap <silent> \\ <Cmd>Telescope buffers<CR>
+nnoremap <silent> ;; <Cmd>Telescope help_tags<CR>
+nnoremap <silent> ;m <Cmd>Telescope marks<CR>
 nnoremap <C-F> :lua require("telescope.builtin").git_files()<CR>
 nnoremap <C-B> :lua require("telescope.builtin").file_browser()<CR>
 

@@ -1,9 +1,10 @@
 let g:completion_chain_complete_list = {
     \ 'default': [
-    \    {'complete_items': [ 'tabnine', 'lsp', 'snippet' ]},
+    \    {'complete_items': [ 'lsp', 'snippet' ]},
     \    {'mode': '<c-p>'},
-    \    {'mode': '<c-n>'}
-    \]
+    \    {'mode': '<c-n>'},
+    \ ],
+    \ 'TelescopePrompt' : [ ],
 \}
 
 let g:completion_tabnine_priority = 1

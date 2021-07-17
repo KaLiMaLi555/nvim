@@ -1,4 +1,4 @@
-" Pinis
+" Plugs
 source ~/.config/nvim/plug-config/plugs.vim
 
 " Lets
@@ -36,5 +36,8 @@ source ~/.config/nvim/plug-config/rnvimr.vim
 
 " LSP native
 source ~/.config/nvim/plug-config/lsp-config.vim
+
+" Tabnine configs
+source ~/.config/nvim/plug-config/tabnine.vim
 
 lua require("kalimali")
