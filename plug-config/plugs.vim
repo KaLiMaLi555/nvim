@@ -63,6 +63,7 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'tjdevries/nlua.nvim'
+Plug 'simrat39/symbols-outline.nvim'
 " Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

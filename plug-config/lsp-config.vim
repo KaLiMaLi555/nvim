@@ -4,9 +4,6 @@ let g:completion_enable_auto_popup = 0
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-let g:completion_confirm_key = ""
-imap <expr> pumvisible() ? complete_info()["selected"] != "-1" ?
-          \ "\<Plug>(completion_confirm_completion)" : "\<C-e>\<CR>" : "\<CR>"
 
 " lsp config (the mappings used in the default file don't quite work right)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>

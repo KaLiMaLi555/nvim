@@ -87,3 +87,9 @@ for _, server in ipairs(servers) do
         on_attach=on_attach,
     }
 end
+
+local opts = {
+    highlight_hovered_item = true,
+    show_guides = true,
+}
+require('symbols-outline').setup(opts)
