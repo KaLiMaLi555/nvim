@@ -27,6 +27,7 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 """"""""""""""""""""""""
 set tabstop=4 softtabstop=4 shiftwidth=4
 set expandtab smarttab
+set smartindent
 let g:extra_whitespace_ignored_filetypes = ['TelescopePrompt']
 
 
@@ -37,6 +38,9 @@ set number relativenumber cursorline wildmenu showmatch showcmd nowrap
 set statusline^=%{coc#status()}
 set scrolloff=8
 set modifiable
+set hidden
+set noerrorbells
+set noswapfile nobackup
 let g:AutoPairsFlyMode = 1
 
 
