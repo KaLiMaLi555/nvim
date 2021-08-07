@@ -1,4 +1,4 @@
-""""""""""""""""""""""""
+"tjdevries/cyclist.vim"""""""""""""""""""""""
 " Vim-pluggins         "
 """"""""""""""""""""""""
 call plug#begin()
@@ -18,8 +18,6 @@ Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'tpope/vim-surround'
-
-Plug 'bronson/vim-trailing-whitespace'
 
 Plug 'jiangmiao/auto-pairs'
 
@@ -64,13 +62,12 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'tjdevries/nlua.nvim'
 Plug 'simrat39/symbols-outline.nvim'
+Plug 'codota/tabnine-vim'
 " Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
 Plug 'dstein64/vim-startuptime'
-
-Plug 'codota/tabnine-vim'
 
 call plug#end()

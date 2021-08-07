@@ -1,7 +1,7 @@
 " Required Functions
-function! Toggle_transparent_background()
-    hi Normal guibg=NONE ctermbg=NONE
-endfunction
+" function! Toggle_transparent_background()
+"     hi Normal guibg=NONE ctermbg=NONE
+" endfunction
 
 
 " Autogrps and Cmds
@@ -15,10 +15,10 @@ endfunction
 "     autocmd BufWritePre *.vim :normal gg=G``
 " augroup END
 
-augroup transparent_background
-    autocmd!
-    autocmd FileType * call Toggle_transparent_background()
-augroup END
+" augroup transparent_background
+"     autocmd!
+"     autocmd FileType * call Toggle_transparent_background()
+" augroup END
 
 augroup dwm
     autocmd!
