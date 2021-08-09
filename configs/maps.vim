@@ -52,6 +52,8 @@ nnoremap <leader>k :m .-2<CR>==
 nnoremap : ;
 nnoremap ; :
 
+nnoremap <leader>bs /<C-R>=escape(expand("<cWORD>"), "/")<CR><CR>
+
 """"""""""""""""""""""""
 " Fix white space      "
 """"""""""""""""""""""""

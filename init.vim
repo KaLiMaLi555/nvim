@@ -10,9 +10,6 @@ source ~/.config/nvim/configs/maps.vim
 " Autogroups and cmds
 source ~/.config/nvim/configs/auto.vim
 
-" General Pluggin Configs
-source ~/.config/nvim/plug-config/general.vim
-
 " Startify
 source ~/.config/nvim/plug-config/startify.vim
 
