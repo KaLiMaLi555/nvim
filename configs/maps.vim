@@ -17,10 +17,10 @@ nnoremap <leader><leader>c :<up>
 " Map execute this line
 nnoremap <leader>x :call <SID>executor()<CR>
 " Execute this file
-nnoremap <leader><leader>x :call <SID>save_and_exec()<CR>
+nnoremap <leader>sx :call <SID>save_and_exec()<CR>
 
 " turn off search highlight
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader><leader> :nohlsearch<CR>
 
 " Undotree toggle
 nnoremap <leader>u :UndotreeToggle<CR>
@@ -32,6 +32,7 @@ nnoremap <C-J> :bprevious<CR>
 nnoremap <S-W> :bd<CR>
 
 nmap <S-P> viwp<CR>
+nnoremap <leader>p pg`[1v
 
 " Some useful maps
 nnoremap n nzzzv
@@ -49,14 +50,12 @@ nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
 " Something new
-nnoremap : ;
-nnoremap ; :
+" nnoremap : ;
+" nnoremap ; :
 
-nnoremap <leader>bs /<C-R>=escape(expand("<cWORD>"), "/")<CR><CR>
+nnoremap <leader>fw /<C-R>=escape(expand("<cword>"), "/")<CR><CR>
 
-""""""""""""""""""""""""
-" Fix white space      "
-""""""""""""""""""""""""
+" Fix white space
 nnoremap <leader>sws :%s/\s\+$//<CR>
 
 

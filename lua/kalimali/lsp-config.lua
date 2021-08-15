@@ -1,7 +1,7 @@
 local USER_PATH = '/home/' .. vim.fn.expand('$USER')
 local nvim_lsp = require('lspconfig')
 local protocol = require('vim.lsp.protocol')
-local servers = { "pyright", "bashls", "ccls", "tsserver" }
+local servers = { "pylsp", "bashls", "ccls", "tsserver" }
 local saga = require('lspsaga')
 
 saga.init_lsp_saga {
@@ -42,12 +42,12 @@ local on_attach = function(client, bufnr)
     -- buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
     -- buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
-    if client.resolved_capabilities.document_formatting then
-        vim.api.nvim_command [[augroup Format]]
-        vim.api.nvim_command [[autocmd! * <buffer>]]
-        vim.api.nvim_command [[autocmd  BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
-        vim.api.nvim_command [[augroup END]]
-    end
+    -- if client.resolved_capabilities.document_formatting then
+    --     vim.api.nvim_command [[augroup Format]]
+    --     vim.api.nvim_command [[autocmd! * <buffer>]]
+    --     vim.api.nvim_command [[autocmd  BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    --     vim.api.nvim_command [[augroup END]]
+    -- end
 
     require('completion').on_attach(client, bufnr)
 

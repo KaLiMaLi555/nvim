@@ -12,10 +12,9 @@ Plug 'wojciechkepka/vim-github-dark'
 Plug 'chrisbra/Colorizer'
 
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 Plug 'mbbill/undotree'
-
-Plug 'vim-airline/vim-airline-themes'
 
 Plug 'tpope/vim-surround'
 
@@ -24,8 +23,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tomtom/tcomment_vim'
 
 Plug '907th/vim-auto-save'
-
-Plug 'preservim/nerdtree'
 
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
@@ -38,14 +35,9 @@ Plug 'petRUShka/vim-sage'
 
 Plug 'dbeniamine/cheat.sh-vim'
 
-Plug 'sillybun/vim-repl'
-
 Plug 'szw/vim-maximizer'
 
 Plug 'voldikss/vim-floaterm'
-
-Plug 'glts/vim-magnum'
-Plug 'glts/vim-radical'
 
 Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 Plug 'ryanoasis/vim-devicons'
@@ -62,7 +54,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'tjdevries/nlua.nvim'
 Plug 'simrat39/symbols-outline.nvim'
-Plug 'codota/tabnine-vim'
+" Plug 'codota/tabnine-vim'
 " Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

@@ -1,7 +1,7 @@
 """"""""""""""""""""""""
 " Colors               "
 """"""""""""""""""""""""
-colorscheme ghdark
+colorscheme gruvbox
 set background=dark
 set t_Co=255
 set laststatus=2
@@ -28,7 +28,7 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 " Tabs and Spaces      "
 """"""""""""""""""""""""
 set tabstop=4 softtabstop=4 shiftwidth=4
-set expandtab smarttab
+set smarttab
 " set smartindent
 let g:extra_whitespace_ignored_filetypes = ['TelescopePrompt']
 
@@ -70,27 +70,7 @@ filetype plugin indent on
 
 """""""""""""""""""""""
 " Listchar Settings   "
-""""""""""""""""""""""""
-set list
-" call cyclist#add_listchar_option_set('limited', {
-"         \ 'eol': '↲',
-"         \ 'tab': '» ',
-"         \ 'lead': '_',
-"         \ 'space': '␣',
-"         \ 'trail': '·',
-"         \ 'extends': '<',
-"         \ 'precedes': '>',    
-"         \ 'conceal': '┊',
-"         \ 'nbsp': '␣',
-"         \ })
-" call cyclist#add_listchar_option_set('busy', {
-"         \ 'eol': '↲',
-"         \ 'tab': '»·',
-"         \ 'lead': '_',
-"         \ 'space': '␣',
-"         \ 'trail': '-',
-"         \ 'extends': '☛',
-"         \ 'precedes': '☚',    
-"         \ 'conceal': '┊',
-"         \ 'nbsp': '☠',
-"         \ })
+"""""""""""""""""""""""
+" set list
+" set listchars=tab:\ \ ,eol:↲,trail:·,nbsp:⎵,extends:>,precedes:<
+" highlight CursorLine guibg=#373737
