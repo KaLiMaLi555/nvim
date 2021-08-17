@@ -12,8 +12,6 @@ nnoremap k <cmd>call <SID>jump_direction('k')<CR>
 nnoremap <silent> gj :let _=&lazyredraw<CR>:set lazyredraw<CR>/\%<C-R>=virtcol(".")<CR>v\S<CR>:nohl<CR>:let &lazyredraw=_<CR>
 nnoremap <silent> gk :let _=&lazyredraw<CR>:set lazyredraw<CR>?\%<C-R>=virtcol(".")<CR>v\S<CR>:nohl<CR>:let &lazyredraw=_<CR>
 
-nnoremap <leader><leader>c :<up>
-
 " Map execute this line
 nnoremap <leader>x :call <SID>executor()<CR>
 " Execute this file

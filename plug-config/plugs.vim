@@ -47,6 +47,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'sudormrfbin/cheatsheet.nvim'
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 Plug 'neovim/nvim-lspconfig'
@@ -54,6 +55,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'tjdevries/nlua.nvim'
 Plug 'simrat39/symbols-outline.nvim'
+
 " Plug 'codota/tabnine-vim'
 " Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 
