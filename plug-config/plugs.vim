@@ -1,4 +1,4 @@
-"tjdevries/cyclist.vim"""""""""""""""""""""""
+""""""""""""""""""""""""
 " Vim-pluggins         "
 """"""""""""""""""""""""
 call plug#begin()
@@ -21,6 +21,10 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'tomtom/tcomment_vim'
+
+Plug 'tpope/vim-repeat'
+
+Plug 'preservim/tagbar'
 
 Plug '907th/vim-auto-save'
 

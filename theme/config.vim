@@ -45,6 +45,7 @@ set noerrorbells
 set noswapfile nobackup
 set noequalalways splitright splitbelow
 set autoindent cindent
+set mouse=a
 let g:AutoPairsFlyMode = 1
 
 

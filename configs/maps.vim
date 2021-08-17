@@ -23,11 +23,14 @@ nnoremap <leader><leader> :nohlsearch<CR>
 " Undotree toggle
 nnoremap <leader>u :UndotreeToggle<CR>
 
-" Navigating across vim buffers
-nnoremap <C-K> :bnext<CR>
-nnoremap <C-J> :bprevious<CR>
+" Move between Splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 nnoremap <S-W> :bd<CR>
+nmap <C-q> <C-w>q
 
 nmap <S-P> viwp<CR>
 nnoremap <leader>p pg`[1v
@@ -56,6 +59,15 @@ nnoremap <leader>fw /<C-R>=escape(expand("<cword>"), "/")<CR><CR>
 " Fix white space
 nnoremap <leader>sws :%s/\s\+$//<CR>
 
+" Tagbar
+nnoremap <silent>// :TagbarToggle<CR>
+
+" Mappings for exiting from tabs
+nnoremap <silent>ZZ :wqa<CR>
+nnoremap <silent>ZL :qa!<CR>
+
+" If you forgot putting the line under curly braces
+nnoremap <leader>cu :norm ySS{kJ<cr>
 
 
 
