@@ -37,11 +37,13 @@ let g:extra_whitespace_ignored_filetypes = ['TelescopePrompt']
 " UI Config            "
 """"""""""""""""""""""""
 set number relativenumber cursorline wildmenu showmatch showcmd nowrap
-set statusline^=%{coc#status()}
+" set statusline^=%{coc#status()}
 set scrolloff=8
 set modifiable
 set hidden
 set noerrorbells
+set noshowmode
+set shortmess=F
 set noswapfile nobackup
 set noequalalways splitright splitbelow
 set autoindent cindent

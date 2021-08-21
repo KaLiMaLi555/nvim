@@ -3,7 +3,8 @@
 """"""""""""""""""""""""
 call plug#begin()
 
-Plug 'gruvbox-community/gruvbox'
+Plug 'rktjmp/lush.nvim'
+Plug 'npxbr/gruvbox.nvim'
 Plug 'connorholyday/vim-snazzy'
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
@@ -11,8 +12,10 @@ Plug 'dracula/vim'
 Plug 'wojciechkepka/vim-github-dark'
 Plug 'chrisbra/Colorizer'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kdheepak/tabline.nvim'
 
 Plug 'mbbill/undotree'
 
@@ -26,7 +29,7 @@ Plug 'tpope/vim-repeat'
 
 Plug 'preservim/tagbar'
 
-Plug '907th/vim-auto-save'
+" Plug '907th/vim-auto-save'
 
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
@@ -54,6 +57,8 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'sudormrfbin/cheatsheet.nvim'
 " Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
+Plug 'ThePrimeagen/harpoon'
+
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'glepnir/lspsaga.nvim'
@@ -67,5 +72,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
 Plug 'dstein64/vim-startuptime'
+Plug 'ThePrimeagen/vim-be-good'
 
 call plug#end()

@@ -23,7 +23,7 @@ source ~/.config/nvim/plug-config/floaterm.vim
 source ~/.config/nvim/plug-config/git.vim
 
 " Airline
-source ~/.config/nvim/plug-config/airline.vim
+" source ~/.config/nvim/plug-config/airline.vim
 
 " Themes
 source ~/.config/nvim/theme/config.vim
@@ -35,6 +35,6 @@ source ~/.config/nvim/plug-config/rnvimr.vim
 source ~/.config/nvim/plug-config/lsp-config.vim
 
 " Tabnine configs
-source ~/.config/nvim/plug-config/tabnine.vim
+" source ~/.config/nvim/plug-config/tabnine.vim
 
 lua require("kalimali")

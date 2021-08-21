@@ -20,6 +20,12 @@
 "     autocmd FileType * call Toggle_transparent_background()
 " augroup END
 
+augroup Term_config
+    autocmd TermOpen * startinsert
+    au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+    autocmd TermOpen * setlocal nonumber norelativenumber
+augroup END
+
 augroup highlight_yank
     autocmd!
     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})

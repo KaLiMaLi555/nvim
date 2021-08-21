@@ -3,8 +3,19 @@ nnoremap <Up> <C-y>
 nnoremap <Down> <C-e>
 
 " Switch between tabs
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
+nnoremap <Right> gt
+nnoremap <Left> gT
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
+nnoremap <leader>tq :tabclose <cr>
+nnoremap <leader>tn :tabnew <cr>
+
+" Sizing window horizontally
+nnoremap <C-,> <C-W><
+nnoremap <C-.> <C-W>>
+" nnoremap <A-,> <C-W>5<
+" nnoremap <A-.> <C-W>5>
 
 nnoremap j <cmd>call <SID>jump_direction('j')<CR>
 nnoremap k <cmd>call <SID>jump_direction('k')<CR>
@@ -31,6 +42,8 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <S-W> :bd<CR>
 nmap <C-q> <C-w>q
+
+nnoremap <leader>m :MaximizerToggle<CR>
 
 nmap <S-P> viwp<CR>
 nnoremap <leader>p pg`[1v
@@ -62,6 +75,13 @@ nnoremap <leader>sws :%s/\s\+$//<CR>
 " Tagbar
 nnoremap <silent>// :TagbarToggle<CR>
 
+" Esc and save
+inoremap jk <Esc>:w<Cr>
+inoremap kj <Esc>:w<Cr>
+inoremap jj <Esc>:w<Cr>
+inoremap kk <Esc>:w<Cr>
+
+
 " Mappings for exiting from tabs
 nnoremap <silent>ZZ :wqa<CR>
 nnoremap <silent>ZL :qa!<CR>
@@ -69,6 +89,11 @@ nnoremap <silent>ZL :qa!<CR>
 " If you forgot putting the line under curly braces
 nnoremap <leader>cu :norm ySS{kJ<cr>
 
+" Helpful delete/change into blackhole buffer
+nmap <leader>d "_d
+nmap <leader>c "_c
+nmap <space>d "_d
+nmap <space>c "_c
 
 
 """"""""""""""""""""""""
