@@ -1,4 +1,5 @@
 local lualine = require 'lualine'
+local bufferline = require 'bufferline'
 
 -- Color table for highlights
 local colors = {
@@ -233,7 +234,16 @@ ins_right {'location'}
 -- Now don't forget to initialize lualine
 lualine.setup(config)
 
-vim.cmd[[
-set sessionoptions+=tabpages,globals " store tabpages and globals in session
-"set showtabline=0
-]]
+local bufferline_config = {
+	options = {
+		tab_size = 10,
+		diagnostics = "nvim_lsp",
+		custom_filter = function(buf_number)
+			if vim.fn.bufname(buf_number) ~= "[No Name]" then
+				return true
+			end
+		end,
+	}
+}
+
+bufferline.setup(bufferline_config)

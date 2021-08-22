@@ -13,10 +13,10 @@ imap <expr> pumvisible() ? complete_info()["selected"] != "-1" ?
 
 
 " Lspsaga mappings
-nnoremap <silent> <C-j> <cmd>Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> <C-k> <cmd>Lspsaga diagnostic_jump_prev<CR>
+nnoremap <silent> <leader>ln <cmd>Lspsaga diagnostic_jump_next<CR>
+nnoremap <silent> <leader>lp <cmd>Lspsaga diagnostic_jump_prev<CR>
 nnoremap <silent> K <cmd>Lspsaga hover_doc<CR>
-nnoremap <silent><C-k> <cmd>Lspsaga signature_help<CR>
+nnoremap <silent><S-k> <cmd>Lspsaga signature_help<CR>
 nnoremap <silent><leader>lf <cmd>Lspsaga lsp_finder<CR>
 nnoremap <silent><leader>rn :Lspsaga rename<CR>
 nnoremap <silent> <leader>ca <cmd>Lspsaga code_action<CR>

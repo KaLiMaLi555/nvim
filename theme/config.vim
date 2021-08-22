@@ -48,6 +48,7 @@ set noswapfile nobackup
 set noequalalways splitright splitbelow
 set autoindent cindent
 set mouse=a
+set sessionoptions+=tabpages,globals
 let g:AutoPairsFlyMode = 1
 
 

@@ -20,6 +20,11 @@
 "     autocmd FileType * call Toggle_transparent_background()
 " augroup END
 
+augroup floaterm_bindings
+    autocmd! floaterm_bindings
+    autocmd FileType floaterm tnoremap <buffer> <Esc> <C-\><C-N>
+augroup END
+
 augroup Term_config
     autocmd TermOpen * startinsert
     au BufEnter * if &buftype == 'terminal' | :startinsert | endif

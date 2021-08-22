@@ -22,9 +22,6 @@ source ~/.config/nvim/plug-config/floaterm.vim
 " Vim Git Integrations
 source ~/.config/nvim/plug-config/git.vim
 
-" Airline
-" source ~/.config/nvim/plug-config/airline.vim
-
 " Themes
 source ~/.config/nvim/theme/config.vim
 
@@ -33,8 +30,5 @@ source ~/.config/nvim/plug-config/rnvimr.vim
 
 " LSP native
 source ~/.config/nvim/plug-config/lsp-config.vim
-
-" Tabnine configs
-" source ~/.config/nvim/plug-config/tabnine.vim
 
 lua require("kalimali")

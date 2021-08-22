@@ -76,10 +76,8 @@ nnoremap <leader>sws :%s/\s\+$//<CR>
 nnoremap <silent>// :TagbarToggle<CR>
 
 " Esc and save
-inoremap jk <Esc>:w<Cr>
-inoremap kj <Esc>:w<Cr>
-inoremap jj <Esc>:w<Cr>
-inoremap kk <Esc>:w<Cr>
+nnoremap <C-s> :w<CR>
+inoremap <C-s> <Esc>:w<CR>
 
 
 " Mappings for exiting from tabs
@@ -94,6 +92,8 @@ nmap <leader>d "_d
 nmap <leader>c "_c
 nmap <space>d "_d
 nmap <space>c "_c
+
+tnoremap <Esc> <C-\><C-n>
 
 
 """"""""""""""""""""""""
