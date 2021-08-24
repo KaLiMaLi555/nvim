@@ -31,4 +31,7 @@ source ~/.config/nvim/plug-config/rnvimr.vim
 " LSP native
 source ~/.config/nvim/plug-config/lsp-config.vim
 
+" Harpoon Bindings
+source ~/.config/nvim/plug-config/harpoon.vim
+
 lua require("kalimali")
