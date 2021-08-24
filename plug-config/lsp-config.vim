@@ -4,12 +4,8 @@ let g:completion_enable_auto_popup = 0
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-imap <tab> <Plug>(completion_smart_tab)
-imap <s-tab> <Plug>(completion_smart_s_tab)
-
-let g:completion_confirm_key = ""
-imap <expr> pumvisible() ? complete_info()["selected"] != "-1" ?
-          \ "\<Plug>(completion_confirm_completion)" : "\<C-e>\<CR>" : "\<CR>"
+imap <Tab> <Plug>(completion_smart_tab)
+imap <S-Tab> <Plug>(completion_smart_s_tab)
 
 
 " Lspsaga mappings

@@ -1,9 +1,10 @@
-local lualine = require 'lualine'
-local bufferline = require 'bufferline'
+M = {}
 
 -- Color table for highlights
 local colors = {
-	bg = '#202328',
+	-- bg = '#202328',
+	bg = '#1d2021',
+	-- bg = '#000000',
 	fg = '#bbc2cf',
 	yellow = '#ECBE7B',
 	cyan = '#008080',
@@ -26,8 +27,43 @@ local conditions = {
 	end
 }
 
--- Config
-local config = {
+M.mode_color = {
+	n      = colors.red,
+	i      = colors.green,
+	v      = colors.blue,
+	[''] = colors.blue,
+	V      = colors.blue,
+	c      = colors.magenta,
+	no     = colors.red,
+	s      = colors.orange,
+	S      = colors.orange,
+	[''] = colors.orange,
+	ic     = colors.yellow,
+	R      = colors.violet,
+	Rv     = colors.violet,
+	cv     = colors.red,
+	ce     = colors.red,
+	r      = colors.cyan,
+	rm     = colors.cyan,
+	['r?'] = colors.cyan,
+	['!']  = colors.red,
+	t      = colors.red
+}
+
+M.mode_text = {
+	n      = 'NORMAL',
+	i      = 'INSERT',
+	v      = 'VISUAL',
+	['^V'] = 'VBLOCK',
+	V      = 'VLINE',
+	r      = 'REPLACE',
+	R      = 'REPLACE',
+	t      = 'TERMINAL',
+	c      = 'COMMAND',
+}
+
+-- Default Configs
+M.default_config = {
 	options = {
 		component_separators = "",
 		section_separators = "",
@@ -39,8 +75,6 @@ local config = {
 	tabline = {
 		lualine_a = {},
 		lualine_b = {},
-		-- lualine_c = { require'tabline'.tabline_buffers },
-		-- lualine_x = { require'tabline'.tabline_tabs },
 		lualine_c = {},
 		lualine_x = {},
 		lualine_y = {},
@@ -54,69 +88,36 @@ local config = {
 		lualine_c = {},
 		lualine_x = {}
 	},
-	-- inactive_sections = {
-	-- 	lualine_a = {},
-	-- 	lualine_v = {},
-	-- 	lualine_y = {},
-	-- 	lualine_z = {},
-	-- 	lualine_c = {},
-	-- 	lualine_x = {}
-	-- }
 }
 
 -- Inserts a component in lualine_c at left section
-local function ins_left(component)
-	table.insert(config.sections.lualine_c, component)
+M.ins_left = function (conf, component)
+	table.insert(conf.sections.lualine_c, component)
 end
 
 -- Inserts a component in lualine_x ot right section
-local function ins_right(component)
-	table.insert(config.sections.lualine_x, component)
+M.ins_right =  function (conf, component)
+	table.insert(conf.sections.lualine_x, component)
 end
 
--- ins_left {
--- 	function() return '▊' end,
--- 	color = {fg = colors.blue}, -- Sets highlighting of component
--- 	left_padding = 0 -- We don't need space before this
--- }
+M.ins_delim = {
+	function() return '▊' end,
+	color = {fg = colors.blue},
+	left_padding = 0
+}
 
-ins_left {
+M.ins_section = {
+	function()
+		return '%='
+	end
+}
+
+M.show_mode = {
 	-- mode component
 	function()
 		-- auto change color according to neovims mode
-		local mode_color = {
-			n = colors.red,
-			i = colors.green,
-			v = colors.blue,
-			[''] = colors.blue,
-			V = colors.blue,
-			c = colors.magenta,
-			no = colors.red,
-			s = colors.orange,
-			S = colors.orange,
-			[''] = colors.orange,
-			ic = colors.yellow,
-			R = colors.violet,
-			Rv = colors.violet,
-			cv = colors.red,
-			ce = colors.red,
-			r = colors.cyan,
-			rm = colors.cyan,
-			['r?'] = colors.cyan,
-			['!'] = colors.red,
-			t = colors.red
-		}
-		local mode_text = {
-			n = 'NORMAL',
-			i = 'INSERT',
-			v = 'VISUAL',
-			['^V'] = 'VBLOCK',
-			V = 'VLINE',
-			r = 'REPLACE',
-			R = 'REPLACE',
-			t = 'TERMINAL',
-			c = 'COMMAND',
-		}
+		local mode_color = M.mode_color
+		local mode_text  = M.mode_text
 		vim.api.nvim_command(
 			'hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. " guibg=" ..
 			colors.bg)
@@ -126,7 +127,7 @@ ins_left {
 	left_padding = 1,
 }
 
-ins_left {
+M.show_git_branch = {
 	'branch',
 	icon = '',
 	condition = conditions.check_git_workspace,
@@ -134,11 +135,7 @@ ins_left {
 	left_padding = 0
 }
 
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
-ins_left {function() return '%=' end}
-
-ins_left {
+M.show_filename = {
 	'filename',
 	condition = conditions.buffer_not_empty,
 	color = {fg = colors.magenta, gui = 'bold'},
@@ -146,7 +143,7 @@ ins_left {
 	left_padding = 2
 }
 
-ins_left {
+M.show_filesize = {
 	-- filesize component
 	function()
 		local function format_file_size(file)
@@ -167,9 +164,7 @@ ins_left {
 	condition = conditions.buffer_not_empty
 }
 
--- ins_left {function() return '%=' end}
-
-ins_right {
+M.show_lspserver ={
 	-- Lsp server name .
 	function()
 		local msg = 'No Active Lsp'
@@ -188,7 +183,7 @@ ins_right {
 	color = {fg = '#ffffff', gui = 'bold'}
 }
 
-ins_right {
+M.show_lspdiagnostics = {
 	'diagnostics',
 	sources = {'nvim_lsp'},
 	symbols = {error = ' ', warn = ' ', info = ' '},
@@ -197,22 +192,21 @@ ins_right {
 	color_info = colors.cyan
 }
 
--- Add components to right sections
-ins_right {
+M.show_encoding = {
 	'o:encoding', -- option component same as &encoding in viml
 	upper = true, -- I'm not sure why it's upper case either ;)
 	condition = conditions.hide_in_width,
 	color = {fg = colors.green, gui = 'bold'}
 }
 
--- ins_right {
--- 	'fileformat',
--- 	upper = true,
--- 	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
--- 	color = {fg = colors.green, gui = 'bold'}
--- }
+M.show_fileformat = {
+	'fileformat',
+	upper = true,
+	icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+	color = {fg = M.green, gui = 'bold'}
+}
 
-ins_right {
+M.show_git_diff = {
 	'diff',
 	-- Is it me or the symbol for modified us really weird
 	symbols = {added = ' ', modified = '柳 ', removed = ' '},
@@ -222,28 +216,16 @@ ins_right {
 	condition = conditions.hide_in_width
 }
 
-ins_right {'progress', color = {fg = colors.fg, gui = 'bold'}}
-ins_right {'location'}
-
--- ins_right {
--- 	function() return '▊' end,
--- 	color = {fg = colors.blue},
--- 	right_padding = 0
--- }
-
--- Now don't forget to initialize lualine
-lualine.setup(config)
-
-local bufferline_config = {
-	options = {
-		tab_size = 10,
-		diagnostics = "nvim_lsp",
-		custom_filter = function(buf_number)
-			if vim.fn.bufname(buf_number) ~= "[No Name]" then
-				return true
-			end
-		end,
+M.show_progress = {
+	'progress',
+	color = {
+		fg = colors.fg,
+		gui = 'bold'
 	}
 }
 
-bufferline.setup(bufferline_config)
+M.show_location = {
+	'location'
+}
+
+return M
