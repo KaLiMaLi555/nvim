@@ -16,9 +16,6 @@ source ~/.config/nvim/plug-config/startify.vim
 " Telescope
 source ~/.config/nvim/plug-config/telescope.vim
 
-" Floaterm
-source ~/.config/nvim/plug-config/floaterm.vim
-
 " Vim Git Integrations
 source ~/.config/nvim/plug-config/git.vim
 

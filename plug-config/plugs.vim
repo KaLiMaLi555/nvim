@@ -45,7 +45,7 @@ Plug 'dbeniamine/cheat.sh-vim'
 
 Plug 'szw/vim-maximizer'
 
-Plug 'voldikss/vim-floaterm'
+" Plug 'voldikss/vim-floaterm'
 
 Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 Plug 'ryanoasis/vim-devicons'
