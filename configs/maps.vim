@@ -24,9 +24,9 @@ nnoremap <silent> gj :let _=&lazyredraw<CR>:set lazyredraw<CR>/\%<C-R>=virtcol("
 nnoremap <silent> gk :let _=&lazyredraw<CR>:set lazyredraw<CR>?\%<C-R>=virtcol(".")<CR>v\S<CR>:nohl<CR>:let &lazyredraw=_<CR>
 
 " Map execute this line
-nnoremap <leader>x :call <SID>executor()<CR>
+nnoremap <leader>x :call reloader#executor()<CR>
 " Execute this file
-nnoremap <leader>sx :call <SID>save_and_exec()<CR>
+nnoremap <leader>sx :call reloader#save_and_exec()<CR>
 
 " turn off search highlight
 nnoremap <leader><leader> :nohlsearch<CR>
@@ -99,32 +99,13 @@ tnoremap <Esc> <C-\><C-n>
 """"""""""""""""""""""""
 " Functions
 function! s:jump_direction(letter)
-    let jump_count = v:count
-    if jump_count == 0
-        call execute(printf('normal! g%s', a:letter))
-        return
-    endif
-    if jump_count > 5
-        call execute("normal! m'")
-    endif
-    call execute(printf('normal! %d%s', jump_count, a:letter))
-endfunction
-
-function! s:executor() abort
-    if &ft == 'lua'
-        call execute(printf(":lua %s", getline(".")))
-    elseif &ft == 'vim'
-        execute getline(">")
-    endif
-endfunction
-
-function! s:save_and_exec() abort
-    if &filetype == 'vim'
-        :silent! write
-        :source %
-    elseif &filetype == 'lua'
-        :silent! write
-        :luafile %
-    endif
-    return
+	let jump_count = v:count
+	if jump_count == 0
+		call execute(printf('normal! g%s', a:letter))
+		return
+	endif
+	if jump_count > 5
+		call execute("normal! m'")
+	endif
+	call execute(printf('normal! %d%s', jump_count, a:letter))
 endfunction
