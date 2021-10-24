@@ -4,6 +4,66 @@ local protocol = require('vim.lsp.protocol')
 local servers = { "pylsp", "vimls", "bashls", "ccls", "tsserver" }
 local saga = require('lspsaga')
 
+vim.api.nvim_set_keymap(
+	"i",
+	"<C-x><C-m>",
+	[[<c-r>=luaeval("require('complextras').complete_matching_line()")<CR>]],
+	{ noremap = true }
+)
+vim.api.nvim_set_keymap(
+	"i",
+	"<C-x><C-d>",
+	[[<c-r>=luaeval("require('complextras').complete_line_from_cwd()")<CR>]],
+	{ noremap = true }
+)
+
+local lspkind = require('lspkind')
+lspkind.init()
+
+local cmp = require('cmp')
+cmp.setup({
+	mapping = {
+		["<C-d>"] = cmp.mapping.scroll_docs(-4),
+		["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-e>"] = cmp.mapping.close(),
+		["<c-y>"] = cmp.mapping.confirm {
+			behavior = cmp.ConfirmBehavior.Insert,
+			select = true,
+		},
+		["<c-space>"] = cmp.mapping.complete(),
+	},
+	sources = {
+		-- { name = "gh_issues" },
+
+		{ name = "nvim_lua" },
+		{ name = "zsh" },
+
+		{ name = "nvim_lsp" },
+		{ name = "path" },
+		{ name = "luasnip" },
+		{ name = "buffer", keyword_length = 5 },
+	},
+	formatting = {
+		format = lspkind.cmp_format {
+			with_text = true,
+			menu = {
+				buffer = "[buf]",
+				nvim_lsp = "[LSP]",
+				nvim_lua = "[api]",
+				path = "[path]",
+				-- luasnip = "[snip]",
+				-- gh_issues = "[issues]",
+			},
+		},
+	},
+
+	experimental = {
+		native_menu = false,
+
+		ghost_text = true,
+	},
+})
+
 saga.init_lsp_saga {
 	error_sign = '',
 	warn_sign = '',
@@ -45,7 +105,7 @@ local on_attach = function(client, bufnr)
 	--     vim.api.nvim_command [[augroup END]]
 	-- end
 
-	require('completion').on_attach(client, bufnr)
+	-- require('completion').on_attach(client, bufnr)
 
 	protocol.CompletionItemKind = {
 		'', -- Text
@@ -78,7 +138,7 @@ local on_attach = function(client, bufnr)
 end
 
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.resolveSupport = {
 	properties = {
