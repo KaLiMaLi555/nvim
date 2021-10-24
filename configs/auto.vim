@@ -26,7 +26,6 @@ augroup floaterm_bindings
 augroup END
 
 augroup Term_config
-    autocmd TermOpen * startinsert
     au BufEnter * if &buftype == 'terminal' | :startinsert | endif
     autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
@@ -39,4 +38,5 @@ augroup END
 augroup dwm
     autocmd!
     autocmd BufWritePost ~/repos/Dwm-packages/dwmblocks/blocks.def.h !$HOME/repos/Dwm-packages/dwmblocks/buildscript.sh
+    autocmd BufWritePost ~/repos/Dwm-packages/dwm/config.def.h !$HOME/repos/Dwm-packages/dwm/buildscript.sh
 augroup END

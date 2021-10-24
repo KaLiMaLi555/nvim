@@ -1,6 +1,9 @@
 " Plugs
 source ~/.config/nvim/plug-config/plugs.vim
 
+" Reloader
+source ~/.config/nvim/plug-config/reloader.vim
+
 " Lets
 source ~/.config/nvim/configs/lets.vim
 
