@@ -61,7 +61,7 @@ require('telescope').load_extension('fzy_native')
 
 local M = {}
 M.search_dotfiles = function()
-    require("telescope.builtin").find_files(
+	require("telescope.builtin").find_files(
 		{
 			prompt_title = " DotFiles ",
 			cwd = "$HOME/.config/nvim/"
@@ -93,20 +93,21 @@ M.search_envs = function()
 		cwd = envs_path,
 
 		layout_config =
-		{
-			width = 0.3
-		},
+			{
+				width = 0.3
+			},
 
 		attach_mappings = function(prompt_bufnr, map)
 			local current_picker = action_state.get_current_picker(prompt_bufnr)
 			map(
-			"i",
-			"<CR>",
-			function()
-				local entry = action_state.get_selected_entry()
-				vim.g.python3_host_prog = envs_path .. entry.value .. '/bin/python3'
-				actions.close(prompt_bufnr)
-			end
+				"i",
+				"<CR>",
+				function()
+					local entry = action_state.get_selected_entry()
+					vim.g.python3_host_prog = envs_path .. entry.value .. '/bin/python3'
+					vim.g.conda_active_env = entry.value
+					actions.close(prompt_bufnr)
+				end
 			)
 
 			return true

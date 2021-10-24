@@ -1,5 +1,19 @@
+if not pcall(require, "lualine") then
+	return
+end
+
+local should_reload = true
+local reloader = function()
+	if should_reload then
+		RELOAD "lualine"
+		RELOAD "bufferline"
+		RELOAD "kalimali.lualine.utils"
+		RELOAD "kalimali.lualine.bufferline"
+	end
+end
+reloader()
+
 local lualine = require 'lualine'
-local bufferline = require 'bufferline'
 local utils = require 'kalimali.lualine.utils'
 
 
@@ -29,20 +43,5 @@ utils.ins_right (lualine_config, utils.show_location)
 
 
 
--- BUFFERLINE CONFIGS
-local bufferline_config = {
-	options = {
-		tab_size = 10,
-		diagnostics = "nvim_lsp",
-		custom_filter = function(buf_number)
-			if vim.fn.bufname(buf_number) ~= "[No Name]" then
-				return true
-			end
-		end,
-		right_mouse_command = "vertical sbuffer %d",
-	}
-}
-
-
 lualine.setup(lualine_config)
-bufferline.setup(bufferline_config)
+require "kalimali.lualine.bufferline"
