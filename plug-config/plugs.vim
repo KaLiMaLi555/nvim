@@ -16,7 +16,8 @@ Plug 'ap/vim-css-color'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'hoob3rt/lualine.nvim'
-Plug 'akinsho/bufferline.nvim'
+Plug 'zefei/vim-wintabs'
+Plug 'zefei/vim-wintabs-powerline'
 
 Plug 'mbbill/undotree'
 
@@ -24,7 +25,7 @@ Plug 'tpope/vim-surround'
 
 Plug 'jiangmiao/auto-pairs'
 
-Plug 'tomtom/tcomment_vim'
+Plug 'numToStr/Comment.nvim'
 
 Plug 'tpope/vim-repeat'
 

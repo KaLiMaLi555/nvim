@@ -78,3 +78,13 @@ filetype plugin indent on
 " set list
 " set listchars=tab:\ \ ,eol:↲,trail:·,nbsp:⎵,extends:>,precedes:<
 " highlight CursorLine guibg=#373737
+
+
+"""""""""""""""""""""""
+" WinTabs Settings    "
+"""""""""""""""""""""""
+let g:wintabs_powerline_sep_buffer = " "
+let g:wintabs_powerline_sep_tab = " "
+let g:wintabs_powerline_sep_buffer_transition = " "
+let g:wintabs_powerline_sep_tab_transition = " "
+highlight WintabsActive guibg='NONE' guifg='#c678dd'

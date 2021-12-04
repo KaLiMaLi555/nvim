@@ -44,4 +44,3 @@ utils.ins_right (lualine_config, utils.show_location)
 
 
 lualine.setup(lualine_config)
-require "kalimali.lualine.bufferline"
