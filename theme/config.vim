@@ -1,7 +1,7 @@
 """"""""""""""""""""""""
 " Colors               "
 """"""""""""""""""""""""
-colorscheme gruvbox
+colorscheme dracula
 set t_Co=255
 set laststatus=2
 if g:colors_name=="gruvbox"

@@ -45,7 +45,11 @@ require('telescope').setup
 					n = {
 						["q"] = actions.close
 					}
-				}
+				},
+
+			file_ignore_patterns = { "node_modules",
+									 ".eggs",
+								     ".ccls-cache" }
 		},
 	extensions =
 		{

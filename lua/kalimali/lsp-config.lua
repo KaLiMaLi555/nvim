@@ -134,6 +134,8 @@ local on_attach = function(client, bufnr)
 		'ﬦ', -- Operator
 		'', -- TypeParameter
 	}
+	client.resolved_capabilities.document_formatting = false
+	client.resolved_capabilities.document_range_formatting = false
 
 end
 
@@ -184,4 +186,4 @@ local opts = {
     highlight_hovered_item = true,
     show_guides = true,
 }
-require('symbols-outline').setup(opts)
+-- require('symbols-outline').setup(opts)
