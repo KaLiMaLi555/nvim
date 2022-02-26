@@ -1,7 +1,7 @@
 local USER_PATH = '/home/' .. vim.fn.expand('$USER')
 local nvim_lsp = require('lspconfig')
 local protocol = require('vim.lsp.protocol')
-local servers = { "pylsp", "vimls", "bashls", "ccls", "tsserver" }
+local servers = { "pylsp", "bashls", "ccls", "tsserver" }
 local saga = require('lspsaga')
 
 vim.api.nvim_set_keymap(
@@ -158,7 +158,7 @@ for _, server in ipairs(servers) do
 end
 
 local sumneko_root_path = USER_PATH .. '/.config/nvim/plugged/lua-language-server'
-local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
+local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
 require('lspconfig').sumneko_lua.setup {
 	on_attach = on_attach,
 	cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
