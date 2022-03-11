@@ -89,4 +89,6 @@ Plug 'ThePrimeagen/vim-be-good'
 
 Plug 'sbdchd/neoformat'
 
+Plug 'L3MON4D3/LuaSnip'
+
 call plug#end()

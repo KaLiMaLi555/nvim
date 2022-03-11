@@ -57,7 +57,16 @@ require('telescope').setup
 				{
 					override_generic_sorter = false,
 					override_file_sorter = true,
-				}
+				},
+			file_browser =
+				{
+					-- theme = "ivy",
+					mappings =
+						{
+							["i"] = {},
+							["n"] = {},
+					},
+				},
 		}
 }
 
