@@ -3,6 +3,7 @@ require("kalimali.telescope")
 require("kalimali.lsp-config")
 require('kalimali.lualine')
 require('kalimali.harpoon')
+require('kalimali.snippets')
 -- require("kalimali.compe-config")
 require('nvim-treesitter.configs').setup {
 	highlight = {
