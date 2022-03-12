@@ -40,7 +40,10 @@ local snippets = {
 
 for _, lang in ipairs(languages)
 do
-	snippets[lang] = RELOAD('kalimali.snippets.' .. lang)
+	if should_reload then
+		RELOAD("kalimali.snippets" .. lang)
+	end
+	snippets[lang] = require('kalimali.snippets.' .. lang)
 end
 
 ls.snippets = snippets
