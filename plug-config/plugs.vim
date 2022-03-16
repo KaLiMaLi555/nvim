@@ -91,4 +91,6 @@ Plug 'sbdchd/neoformat'
 
 Plug 'L3MON4D3/LuaSnip'
 
+Plug 'karb94/neoscroll.nvim'
+
 call plug#end()
