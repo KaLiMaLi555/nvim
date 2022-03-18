@@ -88,3 +88,4 @@ let g:wintabs_powerline_sep_tab = " "
 let g:wintabs_powerline_sep_buffer_transition = " "
 let g:wintabs_powerline_sep_tab_transition = " "
 highlight WintabsActive guibg='NONE' guifg='#c678dd'
+highlight WinSeparator guibg=None

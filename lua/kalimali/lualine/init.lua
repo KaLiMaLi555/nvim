@@ -8,7 +8,6 @@ local reloader = function()
 		RELOAD "lualine"
 		RELOAD "bufferline"
 		RELOAD "kalimali.lualine.utils"
-		RELOAD "kalimali.lualine.bufferline"
 	end
 end
 reloader()
@@ -44,3 +43,4 @@ utils.ins_right (lualine_config, utils.show_location)
 
 
 lualine.setup(lualine_config)
+vim.opt.laststatus=3
