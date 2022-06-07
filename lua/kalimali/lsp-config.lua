@@ -1,8 +1,8 @@
 local USER_PATH = '/home/' .. vim.fn.expand('$USER')
 local nvim_lsp = require('lspconfig')
 local protocol = require('vim.lsp.protocol')
-local servers = { "pylsp", "bashls", "ccls", "tsserver" }
-local saga = require('lspsaga')
+local servers = { "pylsp", "bashls", "ccls", "tsserver", "metals" }
+-- local saga = require('lspsaga')
 
 vim.api.nvim_set_keymap(
 	"i",
@@ -64,13 +64,6 @@ cmp.setup({
 	},
 })
 
-saga.init_lsp_saga {
-	error_sign = '',
-	warn_sign = '',
-	hint_sign = '',
-	infor_sign = '',
-	border_style = "round",
-}
 
 -- local on_attach = require('completion').on_attach
 local on_attach = function(client, bufnr)
@@ -134,11 +127,21 @@ local on_attach = function(client, bufnr)
 		'ﬦ', -- Operator
 		'', -- TypeParameter
 	}
-	client.resolved_capabilities.document_formatting = false
-	client.resolved_capabilities.document_range_formatting = false
+	client.server_capabilities.document_formatting = false
+	client.server_capabilities.document_range_formatting = false
 
 end
 
+require("nvim-lsp-installer").setup({
+    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+    ui = {
+        icons = {
+            server_installed = "✓",
+            server_pending = "➜",
+            server_uninstalled = "✗"
+        }
+    }
+})
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -181,9 +184,3 @@ require('lspconfig').sumneko_lua.setup {
 	},
 	capabilities = capabilities,
 }
-
-local opts = {
-    highlight_hovered_item = true,
-    show_guides = true,
-}
--- require('symbols-o tline').setup(opts)

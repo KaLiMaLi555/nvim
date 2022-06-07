@@ -63,6 +63,7 @@ Plug 'sudormrfbin/cheatsheet.nvim'
 
 Plug 'ThePrimeagen/harpoon'
 
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
 Plug 'glepnir/lspsaga.nvim'
