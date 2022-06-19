@@ -1,7 +1,10 @@
 local USER_PATH = '/home/' .. vim.fn.expand('$USER')
+local lspinstaller = require("nvim-lsp-installer")
+lspinstaller.setup {}
 local nvim_lsp = require('lspconfig')
 local protocol = require('vim.lsp.protocol')
-local servers = { "pylsp", "bashls", "ccls", "tsserver", "metals" }
+-- local servers = lspinstall.get_installed_servers()
+local servers = {"pylsp", "bashls", "ccls", "tsserver", "metals", "sumneko_lua" }
 -- local saga = require('lspsaga')
 
 vim.api.nvim_set_keymap(
@@ -133,7 +136,7 @@ local on_attach = function(client, bufnr)
 end
 
 require("nvim-lsp-installer").setup({
-    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+    automatic_installation = false, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
     ui = {
         icons = {
             server_installed = "✓",
@@ -154,33 +157,22 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
 }
 
 for _, server in ipairs(servers) do
-	nvim_lsp[server].setup {
-		on_attach = on_attach,
-		capabilities = capabilities,
-	}
+	if server == 'sumneko_lua' then
+		nvim_lsp[server].setup {
+			on_attach = on_attach,
+			capabilities = capabilities,
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { 'vim' }
+					}
+				}
+			}
+		}
+	else
+		nvim_lsp[server].setup {
+			on_attach = on_attach,
+			capabilities = capabilities,
+		}
+	end
 end
-
-local sumneko_root_path = USER_PATH .. '/.config/nvim/plugged/lua-language-server'
-local sumneko_binary = sumneko_root_path .. "/bin/lua-language-server"
-require('lspconfig').sumneko_lua.setup {
-	on_attach = on_attach,
-	cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
-	settings = {
-		Lua = {
-			runtime = {
-				version = 'LuaJIT',
-				path = vim.split(package.path, ';'),
-			},
-			diagnostics = {
-				globals = {'vim'},
-			},
-			workspace = {
-				library = {
-					[vim.fn.expand('$VIMRUNTIME/lua')] = true,
-					[vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true,
-				},
-			},
-		},
-	},
-	capabilities = capabilities,
-}
