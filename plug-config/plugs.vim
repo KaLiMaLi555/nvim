@@ -65,7 +65,6 @@ Plug 'ThePrimeagen/harpoon'
 
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/completion-nvim'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'tjdevries/nlua.nvim'
 " Plug 'simrat39/symbols-outline.nvim'
@@ -76,8 +75,12 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-git'
 Plug 'tamago324/cmp-zsh'
+
+Plug 'L3MON4D3/LuaSnip'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 " Plug 'codota/tabnine-vim'
 " Plug 'aca/completion-tabnine', { 'do': './install.sh' }
@@ -89,8 +92,6 @@ Plug 'dstein64/vim-startuptime'
 Plug 'ThePrimeagen/vim-be-good'
 
 Plug 'sbdchd/neoformat'
-
-Plug 'L3MON4D3/LuaSnip'
 
 Plug 'karb94/neoscroll.nvim'
 
