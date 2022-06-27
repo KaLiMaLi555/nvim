@@ -15,6 +15,7 @@ function! reloader#save_and_exec() abort
 	elseif &filetype == 'lua'
 		:silent! write
 		:luafile %
+		:luafile ~/.config/nvim/lua/kalimali/snippets/init.lua
 	endif
 	return
 endfunction

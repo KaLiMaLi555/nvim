@@ -35,10 +35,10 @@ nnoremap <leader><leader> :nohlsearch<CR>
 nnoremap <leader>u :UndotreeToggle<CR>
 
 " Move between Splits
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
 nnoremap <S-W> :WintabsClose<CR>
 nmap <C-q> <C-w>q
