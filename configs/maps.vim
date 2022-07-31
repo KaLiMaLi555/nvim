@@ -41,7 +41,7 @@ nnoremap <leader>u :UndotreeToggle<CR>
 " nnoremap <C-l> <C-w>l
 
 nnoremap <S-W> :WintabsClose<CR>
-nmap <C-q> <C-w>q
+" nmap <C-q> <C-w>q
 
 nnoremap <leader>m :MaximizerToggle<CR>
 
