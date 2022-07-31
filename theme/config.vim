@@ -31,6 +31,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4
 set smarttab
 " set smartindent
 let g:extra_whitespace_ignored_filetypes = ['TelescopePrompt']
+set formatoptions-=cro
 
 
 """"""""""""""""""""""""
@@ -50,6 +51,15 @@ set autoindent cindent
 set mouse=a
 set sessionoptions+=tabpages,globals
 let g:AutoPairsFlyMode = 1
+set splitbelow splitright
+set ignorecase
+set smartcase
+
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+
+let g:highlightedyank_highlight_duration = 80
 
 
 """"""""""""""""""""""""

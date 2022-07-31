@@ -48,6 +48,12 @@ nnoremap <leader>m :MaximizerToggle<CR>
 nmap <S-P> viwp<CR>
 nnoremap <leader>p pg`[1v
 
+" Yanking and pasting from clipboard
+nnoremap <leader>y "*y
+nnoremap <leader>p "*p
+
+nnoremap <leader>sh <Esc>:syntax sync clear<CR>
+
 " Some useful maps
 nnoremap n nzzzv
 nnoremap N Nzzzv

@@ -1,18 +1,28 @@
 """"""""""""""""""""""""
 " Vim-pluggins         "
 """"""""""""""""""""""""
+" Check if vim-plug is installed
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+	silent !sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	autocmd VimEnter * PlugInstall --sync
+endif
+
+
 call plug#begin()
 
-Plug 'rktjmp/lush.nvim'
+" Plug 'rktjmp/lush.nvim'
 Plug 'npxbr/gruvbox.nvim'
-Plug 'connorholyday/vim-snazzy'
-Plug 'joshdick/onedark.vim'
-Plug 'arcticicestudio/nord-vim'
+" Plug 'connorholyday/vim-snazzy'
+" Plug 'joshdick/onedark.vim'
+" Plug 'arcticicestudio/nord-vim'
 Plug 'dracula/vim'
-Plug 'rebelot/kanagawa.nvim'
-Plug 'wojciechkepka/vim-github-dark'
+" Plug 'rebelot/kanagawa.nvim'
+" Plug 'wojciechkepka/vim-github-dark'
 Plug 'chrisbra/Colorizer'
 Plug 'ap/vim-css-color'
+
+Plug 'machakann/vim-highlightedyank'
 
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
@@ -49,7 +59,7 @@ Plug 'szw/vim-maximizer'
 
 " Plug 'voldikss/vim-floaterm'
 
-Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+" Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 

@@ -30,13 +30,19 @@ augroup Term_config
     autocmd TermOpen * setlocal nonumber norelativenumber
 augroup END
 
-augroup highlight_yank
-    autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
-augroup END
+" augroup highlight_yank
+"     autocmd!
+"     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
+" augroup END
 
 augroup dwm
     autocmd!
     autocmd BufWritePost ~/repos/Dwm-packages/dwmblocks/blocks.def.h !$HOME/repos/Dwm-packages/dwmblocks/buildscript.sh
     autocmd BufWritePost ~/repos/Dwm-packages/dwm/config.def.h !$HOME/repos/Dwm-packages/dwm/buildscript.sh
+augroup END
+
+augroup cursorcolumn
+	autocmd! FileType yaml set cursorcolumn
+	autocmd! FileType yml set cursorcolumn
+	autocmd! FileType python set cursorcolumn
 augroup END
