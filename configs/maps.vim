@@ -101,6 +101,8 @@ nmap <space>c "_c
 
 tnoremap <Esc> <C-\><C-n>
 
+" Nvim-Tree
+nnoremap <leader>nt <Cmd>NvimTreeToggle<Cr>
 
 """"""""""""""""""""""""
 " Functions
