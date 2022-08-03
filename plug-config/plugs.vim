@@ -27,8 +27,9 @@ Plug 'machakann/vim-highlightedyank'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'hoob3rt/lualine.nvim'
-Plug 'zefei/vim-wintabs'
-Plug 'zefei/vim-wintabs-powerline'
+" Plug 'zefei/vim-wintabs'
+" Plug 'zefei/vim-wintabs-powerline'
+Plug 'romgrk/barbar.nvim'
 
 Plug 'mbbill/undotree'
 

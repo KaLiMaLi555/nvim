@@ -5,10 +5,13 @@ nnoremap <Down> <C-e>
 " Switch between tabs
 nnoremap <Right> gt
 nnoremap <Left> gT
-nnoremap <Tab> :WintabsNext<CR>
-nnoremap <S-Tab> :WintabsPrevious<CR>
+" nnoremap <Tab> :WintabsNext<CR>
+" nnoremap <S-Tab> :WintabsPrevious<CR>
+nnoremap <Tab> :BufferNext<CR>
+nnoremap <S-Tab> :BufferPrevious<CR>
 
-nnoremap <leader>tq :WintabsCloseVimtab <cr>
+" nnoremap <leader>tq :WintabsCloseVimtab <cr>
+" nnoremap <leader>tq :BufferClose <cr>
 nnoremap <leader>tn :tabnew <cr>
 
 " Sizing window horizontally
@@ -40,7 +43,8 @@ nnoremap <leader>u :UndotreeToggle<CR>
 " nnoremap <C-k> <C-w>k
 " nnoremap <C-l> <C-w>l
 
-nnoremap <S-W> :WintabsClose<CR>
+" nnoremap <S-W> :WintabsClose<CR>
+nnoremap <S-W> :BufferClose<CR>
 " nmap <C-q> <C-w>q
 
 nnoremap <leader>m :MaximizerToggle<CR>
