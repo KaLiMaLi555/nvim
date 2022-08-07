@@ -55,7 +55,7 @@ set splitbelow splitright
 set ignorecase
 set smartcase
 
-set wrap
+" set wrap
 set textwidth=79
 set formatoptions=qrn1
 

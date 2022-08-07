@@ -41,8 +41,8 @@ augroup dwm
     autocmd BufWritePost ~/repos/Dwm-packages/dwm/config.def.h !$HOME/repos/Dwm-packages/dwm/buildscript.sh
 augroup END
 
-augroup cursorcolumn
-	autocmd! FileType yaml set cursorcolumn
-	autocmd! FileType yml set cursorcolumn
-	autocmd! FileType python set cursorcolumn
-augroup END
+" augroup cursorcolumn
+" 	autocmd! FileType yaml set cursorcolumn
+" 	autocmd! FileType yml set cursorcolumn
+" 	autocmd! FileType python set cursorcolumn
+" augroup END

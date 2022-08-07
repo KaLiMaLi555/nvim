@@ -51,6 +51,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'
 
 Plug 'mhinz/vim-startify'
+" Plug 'glepnir/dashboard-nvim'
 
 Plug 'petRUShka/vim-sage'
 
