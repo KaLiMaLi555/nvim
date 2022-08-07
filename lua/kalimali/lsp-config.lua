@@ -224,6 +224,23 @@ for _, server in ipairs(servers) do
 		nvim_lsp[server].setup {
 			on_attach = on_attach,
 			capabilities = capabilities,
+			settings = {
+				pylsp = {
+					plugins = {
+						autopep8 = {
+							enabled = false
+						},
+						pydocstyle = {
+							enabled = false
+						},
+						flake8 = {
+							enabled = true
+						},
+
+					},
+					configurationSources = { 'flake8' }
+				},
+			}
 		}
 	end
 end
