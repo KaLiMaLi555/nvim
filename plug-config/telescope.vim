@@ -6,7 +6,7 @@ nnoremap <silent> ;; <Cmd>Telescope help_tags<CR>
 nnoremap <silent> ;m <Cmd>Telescope marks<CR>
 nnoremap <silent> ;/ <Cmd>Telescope current_buffer_fuzzy_find<CR>
 nnoremap <silent> <leader>km <Cmd>Telescope keymaps<CR>
-nnoremap <C-G> :lua require("kalimali.telescope").git_files()<CR>
+nnoremap <C-G> :lua require("kalimali.telescope").find_files()<CR>
 nnoremap <C-F> <cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>
 
 nnoremap <leader>te :lua require('kalimali.telescope').search_envs()<CR>
