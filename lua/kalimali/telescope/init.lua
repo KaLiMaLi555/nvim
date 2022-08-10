@@ -76,12 +76,24 @@ require("telescope").load_extension('file_browser')
 
 local M = {}
 M.search_dotfiles = function()
+	local home = os.getenv('HOME')
 	require("telescope.builtin").find_files(
 		{
 			prompt_title = " DotFiles ",
-			cwd = "$HOME/.config/nvim/"
+			cwd = home .. "/.config/nvim/"
 		}
 	)
+end
+
+M.dashboard_open_dotfiles = function()
+	local home = os.getenv('HOME')
+	require("telescope.builtin").find_files(
+		{
+			prompt_title = " DotFiles ",
+			cwd = home .. "/.config/nvim/"
+		}
+	)
+	vim.api.nvim_set_current_dir(home .. "/.config/nvim/")
 end
 
 M.git_branches = function()

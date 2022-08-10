@@ -14,7 +14,7 @@ source ~/.config/nvim/configs/maps.vim
 source ~/.config/nvim/configs/auto.vim
 
 " Startify
-source ~/.config/nvim/plug-config/startify.vim
+" source ~/.config/nvim/plug-config/startify.vim
 
 " Telescope
 source ~/.config/nvim/plug-config/telescope.vim
