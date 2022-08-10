@@ -1,12 +1,15 @@
 """"""""""""""""""""""""
 " Colors               "
 """"""""""""""""""""""""
-colorscheme dracula
+colorscheme material
 set t_Co=255
 set laststatus=2
 if g:colors_name=="gruvbox"
     let g:gruvbox_contrast_dark = 'hard'
     let g:gruvbox_invert_selection='0'
+endif
+if g:colors_name=="material"
+	let g:material_style = "deep ocean"
 endif
 set background=dark
 set termguicolors
