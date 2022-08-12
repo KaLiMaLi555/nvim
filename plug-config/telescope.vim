@@ -10,6 +10,7 @@ nnoremap <C-G> :lua require("kalimali.telescope").find_files()<CR>
 nnoremap <C-F> <cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>
 
 nnoremap <leader>te :lua require('kalimali.telescope').search_envs()<CR>
+nnoremap <leader>ts :lua require('kalimali.telescope').search_sessions()<CR>
 nnoremap <leader>tg :lua require('kalimali.telescope').git_status()<CR>
 
 nnoremap <leader>vrc :lua require('kalimali.telescope').search_dotfiles()<CR>

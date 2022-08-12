@@ -143,6 +143,41 @@ M.search_envs = function()
 	utils.find_dirs(opts)
 end
 
+M.search_sessions = function()
+	local sessions_path = vim.fn.stdpath('config') .. '/sessions'
+	local opts = themes.get_dropdown{
+		prompt_title = " Saved Sessions ",
+		-- winblend = 5,
+		previewer = false,
+		shorten_path = false,
+
+		cwd = sessions_path,
+
+		-- layout_config =
+		-- 	{
+		-- 		width = 0.3
+		-- 	},
+
+		attach_mappings = function(prompt_bufnr, map)
+			local current_picker = action_state.get_current_picker(prompt_bufnr)
+			map(
+				"i",
+				"<CR>",
+				function()
+					local entry = action_state.get_selected_entry()
+					local session_dir = string.gsub(entry.value, "__", "/")
+					vim.cmd('cd ' .. session_dir)
+					vim.cmd('SessionManager load_current_dir_session')
+					actions.close(prompt_bufnr)
+				end
+			)
+
+			return true
+		end
+	}
+	utils.find_dirs(opts)
+end
+
 function M.git_status()
 	local opts = themes.get_dropdown {
 		winblend = 10,
