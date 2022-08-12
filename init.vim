@@ -1,5 +1,10 @@
+if empty(glob('~/.local/share/nvim/site/pack/packer/start/packer.nvim'))
+	silent ! git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+	autocmd VimEnter * PackerInstall
+endif
+
 " Plugs
-source ~/.config/nvim/plug-config/plugs.vim
+lua require("plugins")
 
 " Reloader
 source ~/.config/nvim/plug-config/reloader.vim

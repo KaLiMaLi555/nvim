@@ -12,6 +12,13 @@ if pcall(require, "plenary") then
     end
 end
 
+vim.cmd([[
+	augroup packer_user_config
+		autocmd!
+		autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+	augroup end
+]])
+
 require('Comment').setup()
 
 require('neoscroll').setup({

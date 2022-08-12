@@ -56,7 +56,7 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'goolord/alpha-nvim'
 Plug 'Shatur/neovim-session-manager'
 
-Plug 'petRUShka/vim-sage'
+" Plug 'petRUShka/vim-sage'
 
 Plug 'dbeniamine/cheat.sh-vim'
 
