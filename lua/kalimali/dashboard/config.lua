@@ -50,6 +50,7 @@ function M.get_sections()
 	local buttons = {
 		entries = {
 			-- { "l", "  Recently latest session", ":SessionLoad <CR>" },
+			{ "s", "  Sessions", ":lua require('kalimali.telescope').search_sessions() <CR>" },
 			{ "f", "  Find file", ":Telescope find_files <CR>" },
 			{ "e", "  New file", ":enew <BAR> startinsert <CR>" },
 			-- { "p", "  Find project", ":Telescope projects <CR>" },
