@@ -57,6 +57,7 @@ let g:AutoPairsFlyMode = 1
 set splitbelow splitright
 set ignorecase
 set smartcase
+hi EndOfBuffer guibg=bg guifg=bg
 
 " set wrap
 set textwidth=79
