@@ -3,6 +3,5 @@
 **/plugged
 **/scratch
 **/node_modules
-**/plugin
 **/.DS_Store
 **/lazy-lock.json
