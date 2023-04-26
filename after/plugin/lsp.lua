@@ -9,11 +9,6 @@ local cmp = require('cmp')
 
 lsp.preset('recommended')
 
-lsp.ensure_installed({
-	'pylsp',
-    'lua_ls'
-})
-
 -- Fix Undefined global 'vim'
 lsp.configure('lua_ls', {
     settings = {
