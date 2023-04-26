@@ -3,7 +3,8 @@ M = {}
 -- Color table for highlights
 local colors = {
 	-- bg = '#202328',
-	bg = '#1d2021',
+	-- bg = '#1d2021',
+	bg = '#16000a',
 	-- bg = '#000000',
 	fg = '#bbc2cf',
 	yellow = '#ECBE7B',

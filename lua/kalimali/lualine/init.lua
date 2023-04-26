@@ -6,7 +6,6 @@ local should_reload = true
 local reloader = function()
 	if should_reload then
 		RELOAD "lualine"
-		RELOAD "bufferline"
 		RELOAD "kalimali.lualine.utils"
 	end
 end

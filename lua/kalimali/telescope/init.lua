@@ -68,11 +68,18 @@ require('telescope').setup
 							["n"] = {},
 					},
 				},
+			frecency = {
+				show_scores = true,
+				show_unindexed = true,
+				ignore_patterns = {"*.git/*", "*/tmp/*"},
+				disable_devicons = false,
+			}
 		}
 }
 
 require('telescope').load_extension('fzy_native')
-require("telescope").load_extension('file_browser')
+require('telescope').load_extension('file_browser')
+require('telescope').load_extension('frecency')
 
 local M = {}
 M.search_dotfiles = function()
@@ -144,7 +151,7 @@ M.search_envs = function()
 end
 
 M.search_sessions = function()
-	local sessions_path = vim.fn.stdpath('config') .. '/sessions'
+	local sessions_path = vim.fn.stdpath('data') .. '/sessions'
 	local opts = themes.get_dropdown{
 		prompt_title = " Saved Sessions ",
 		-- winblend = 5,
@@ -165,9 +172,12 @@ M.search_sessions = function()
 				"<CR>",
 				function()
 					local entry = action_state.get_selected_entry()
-					local session_dir = string.gsub(entry.value, "__", "/")
-					vim.cmd('cd ' .. session_dir)
-					vim.cmd('SessionManager load_current_dir_session')
+					-- local session_dir = string.gsub(entry.value, "__", "/")
+					-- vim.cmd('cd ' .. session_dir)
+					-- vim.cmd('SessionManager load_current_dir_session')
+                    local session_dir = vim.fn.stdpath('data') .. '/sessions/' .. entry.value
+                    print(session_dir)
+					vim.cmd('SessionsLoad ' .. session_dir)
 					actions.close(prompt_bufnr)
 				end
 			)

@@ -43,7 +43,7 @@ local function configure_additional_autocmds()
 	vim.api.nvim_create_autocmd("FileType", {
 		group = group,
 		pattern = "alpha",
-		command = "set showtabline=0 laststatus=0 | autocmd BufLeave <buffer> set showtabline=" .. vim.opt.showtabline._value,
+		command = "set showtabline=0 laststatus=3 | autocmd BufLeave <buffer> set showtabline=" .. vim.opt.showtabline._value,
 	})
 end
 
