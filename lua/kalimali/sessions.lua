@@ -28,8 +28,10 @@ local function restore_session(prompt_bufnr, _)
         local session_name = selection[1]:gsub("./", "")
         vim.g.current_session = session_name
         session_name = vim.g.session_dir .. "/" .. session_name
-        local cmd = "source " .. session_name
+        local cmd = "silent! source " .. session_name
         vim.cmd(cmd)
+		-- Hacky fix for exiting inert mode after restoring session
+		vim.cmd("stopinsert")
         -- utils.info(session_name, "Session restored")
     end)
     return true

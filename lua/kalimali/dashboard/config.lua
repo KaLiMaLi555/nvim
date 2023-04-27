@@ -55,7 +55,6 @@ function M.get_sections()
 			-- { "p", "  Find project", ":Telescope projects <CR>" },
 			{ "r", "  Recently used files", ":Telescope oldfiles <CR>" },
 			{ "t", "  Find text", ":Telescope live_grep <CR>" },
-			{ "u", "ﮮ  Update Plugins", ":PackerUpdate<CR>" },
 			{ "c", "  Configuration", ":lua require('kalimali.dashboard.utils').open_config() <CR>" },
 			{ "q", "  Quit Neovim", ":qa<CR>" },
 		},
