@@ -1,3 +1,4 @@
+-- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -11,6 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Plugins
 local plugins = {
 	-- Colorscheme
 	{
@@ -55,7 +57,7 @@ local plugins = {
 	{
 		'VonHeikemen/fine-cmdline.nvim',
 		dependencies = {
-			{'MunifTanjim/nui.nvim'}
+			{ 'MunifTanjim/nui.nvim' }
 		}
 	},
 	{
@@ -66,7 +68,7 @@ local plugins = {
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.0',
-		dependencies = { {'nvim-lua/plenary.nvim'} },
+		dependencies = { { 'nvim-lua/plenary.nvim' } },
 		lazy = false
 	},
 	{
@@ -77,13 +79,14 @@ local plugins = {
 	},
 	{
 		"nvim-telescope/telescope-frecency.nvim",
-		dependencies = {"kkharji/sqlite.lua"}
+		dependencies = { "kkharji/sqlite.lua" }
 	},
 
 	-- Treesitter
 	{
 		'nvim-treesitter/nvim-treesitter',
-		lazy = false
+		lazy = false,
+		build = ':TSUpdate'
 	},
 	{
 		'nvim-treesitter/nvim-treesitter-context',
@@ -94,26 +97,47 @@ local plugins = {
 	},
 
 	-- LSP
+	-- {
+	-- 	'VonHeikemen/lsp-zero.nvim',
+	-- 	dependencies = {
+	-- 		-- LSP Support
+	-- 		{'neovim/nvim-lspconfig'},
+	-- 		{'williamboman/mason.nvim'},
+	-- 		{'williamboman/mason-lspconfig.nvim'},
+	--
+	-- 		-- Autocompletion
+	-- 		{'hrsh7th/nvim-cmp'},
+	-- 		{'hrsh7th/cmp-buffer'},
+	-- 		{'hrsh7th/cmp-path'},
+	-- 		{'saadparwaiz1/cmp_luasnip'},
+	-- 		{'hrsh7th/cmp-nvim-lsp'},
+	-- 		{'hrsh7th/cmp-nvim-lua'},
+	--
+	-- 		-- Snippets
+	-- 		{'L3MON4D3/LuaSnip'},
+	-- 		{'rafamadriz/friendly-snippets'},
+	-- 	}
+	-- },
+	{ 'williamboman/mason.nvim' },
+	{ "williamboman/mason-lspconfig.nvim" },
 	{
-		'VonHeikemen/lsp-zero.nvim',
+		'ray-x/navigator.lua',
 		dependencies = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
-
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-buffer'},
-			{'hrsh7th/cmp-path'},
-			{'saadparwaiz1/cmp_luasnip'},
-			{'hrsh7th/cmp-nvim-lsp'},
-			{'hrsh7th/cmp-nvim-lua'},
-
-			-- Snippets
-			{'L3MON4D3/LuaSnip'},
-			{'rafamadriz/friendly-snippets'},
-		}
+			{ 'ray-x/guihua.lua',                 build = 'cd lua/fzy && make' },
+			{ 'neovim/nvim-lspconfig' },
+			{ "nvim-treesitter/nvim-treesitter" },
+			{ 'williamboman/mason.nvim' },
+			{ 'williamboman/mason-lspconfig.nvim' },
+			{ 'hrsh7th/nvim-cmp' },
+			{ 'hrsh7th/cmp-nvim-lsp' },
+			{ 'hrsh7th/cmp-nvim-lua' },
+			{ 'hrsh7th/cmp-buffer' },
+			{ 'hrsh7th/cmp-path' },
+			{ 'saadparwaiz1/cmp_luasnip' },
+			{ 'L3MON4D3/LuaSnip' },
+			{ 'rafamadriz/friendly-snippets' },
+		},
+		lazy = false
 	},
 	{
 		'github/copilot.vim'
