@@ -26,10 +26,10 @@ vim.keymap.set("n", "<leader>hd", function() ui.nav_file(3) end)
 vim.keymap.set("n", "<leader>hf", function() ui.nav_file(4) end)
 
 -- Nvterm
-vim.keymap.set("n", "<C-h>", ":lua require('nvterm.terminal').toggle 'horizontal'<CR>")
-vim.keymap.set("n", "<C-l>", ":lua require('nvterm.terminal').toggle 'float'<CR>")
-vim.keymap.set("t", "<C-h>", "<C-\\><C-N><CR><CR> :lua require('nvterm.terminal').toggle 'horizontal'<CR>")
-vim.keymap.set("t", "<C-l>", "<C-\\><C-N><CR><CR> :lua require('nvterm.terminal').toggle 'float'<CR>")
+vim.keymap.set("n", "<C-h>", "<Cmd>lua require('nvterm.terminal').toggle 'horizontal'<CR>")
+vim.keymap.set("n", "<C-l>", "<Cmd>lua require('nvterm.terminal').toggle 'float'<CR>")
+vim.keymap.set("t", "<C-h>", "<C-\\><C-N><CR><Cmd>lua require('nvterm.terminal').toggle 'horizontal'<CR>")
+vim.keymap.set("t", "<C-l>", "<C-\\><C-N><CR><Cmd>lua require('nvterm.terminal').toggle 'float'<CR>")
 
 -- Neogit
 vim.keymap.set("n", "<leader>gs", vim.cmd.Neogit)
