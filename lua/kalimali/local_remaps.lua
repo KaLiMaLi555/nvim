@@ -32,3 +32,5 @@ vim.keymap.set("n", "<leader>sm", ":lua require('kalimali.sessions').save_sessio
 vim.keymap.set("n", "<leader>sd", ":lua require('kalimali.sessions').delete_session()<CR>")
 
 vim.keymap.set("n", "<leader>fw", "/<C-R>=escape(expand('<cword>'), '/')<CR><CR>")
+
+vim.keymap.set("n", "<leader>b", ":bufdo e<CR>")

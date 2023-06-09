@@ -36,6 +36,8 @@ vim.opt.splitbelow = true
 
 vim.opt.hidden = true
 
+vim.opt.confirm = false
+
 vim.opt.sessionoptions = "buffers,curdir,globals,folds,tabpages,winsize"
 vim.opt.listchars = { tab = "󱞩 ", eol = " " }
 vim.opt.list = true

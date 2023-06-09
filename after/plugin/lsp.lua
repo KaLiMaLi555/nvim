@@ -44,7 +44,10 @@ cmp.setup({
 		{
 			{ name = 'luasnip' },
 		}
-	)
+	),
+	completion = {
+		autocomplete = false,
+	},
 })
 
 require 'navigator'.setup({
