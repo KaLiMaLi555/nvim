@@ -1,11 +1,11 @@
 return {
-  { "scottmckendry/cyberdream.nvim" },
+    { "scottmckendry/cyberdream.nvim" },
 
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "cyberdream",
+    -- Configure LazyVim to load gruvbox
+    {
+        "LazyVim/LazyVim",
+        opts = {
+            colorscheme = "cyberdream",
+        },
     },
-  },
 }
