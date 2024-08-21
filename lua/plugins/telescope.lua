@@ -31,7 +31,7 @@ return {
             {desc = "Telescope search word"}
         },
         {
-            "<leader>P",
+            "<leader>pr",
             require("telescope").extensions.projects.projects,
             { desc = "Search Projects" },
         },
