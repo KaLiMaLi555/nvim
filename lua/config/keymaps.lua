@@ -26,3 +26,5 @@ vim.keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
 vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
+
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.scripts/tmux-sessionizer<CR>")
