@@ -22,6 +22,15 @@ return {
             { desc = "Telescope search current WORD" },
         },
         {
+            "<leader>ps",
+            function()
+                require("telescope.builtin").grep_string({
+                    search = vim.fn.input("Grep > "),
+                })
+            end,
+            {desc = "Telescope search word"}
+        },
+        {
             "<leader>P",
             require("telescope").extensions.projects.projects,
             { desc = "Search Projects" },
