@@ -25,3 +25,6 @@ vim.g.autoformat = false
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.colorcolumn = "90"
+
+vim.opt.backspace = "indent,eol,start"
+vim.opt.clipboard:append("unnamedplus")
