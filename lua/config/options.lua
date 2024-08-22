@@ -1,30 +1,29 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
+local opt = vim.opt
+local g = vim.g
 
-vim.opt.termguicolors = true
+opt.termguicolors = true
 
-vim.opt.scrolloff = 15
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
+opt.scrolloff = 15
+opt.hlsearch = true
+opt.incsearch = true
 
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.smartindent = true
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.smartindent = true
 
-vim.opt.wrap = false
+opt.wrap = false
 
-vim.opt.swapfile = false
-vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true
 
-vim.g.autoformat = false
+opt.signcolumn = "yes"
+opt.isfname:append("@-@")
+opt.colorcolumn = "90"
 
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
-vim.opt.colorcolumn = "90"
-
-vim.opt.backspace = "indent,eol,start"
-vim.opt.clipboard:append("unnamedplus")
+opt.backspace = "indent,eol,start"
