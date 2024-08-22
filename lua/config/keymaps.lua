@@ -34,6 +34,3 @@ keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
 keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
 
 keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.scripts/tmux-sessionizer<CR>")
-
-g.autoformat = false
-g.clipboard:append("unnamedplus")

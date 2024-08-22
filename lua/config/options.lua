@@ -27,3 +27,5 @@ opt.isfname:append("@-@")
 opt.colorcolumn = "90"
 
 opt.backspace = "indent,eol,start"
+
+g.autoformat = false
