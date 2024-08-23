@@ -1,9 +1,24 @@
 return {
-    { "tpope/vim-repeat" },
+    {
+        "tpope/vim-repeat",
+        event = { "BufReadPre", "BufNewFile" },
+    },
     {
         "numToStr/Comment.nvim",
-        config = function ()
-            require("Comment").setup()
-        end
-    }
+        event = { "BufReadPre", "BufNewFile" },
+        config = true,
+    },
+    {
+        "kylechui/nvim-surround",
+        event = { "BufReadPre", "BufNewFile" },
+        config = true,
+    },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        main = "ibl",
+        opts = {
+            indent = { char = "┃" },
+        },
+    },
 }
