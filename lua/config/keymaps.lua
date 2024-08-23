@@ -30,7 +30,4 @@ keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
 
 keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-keymap.set("n", "<Tab>", "<cmd>BufferLineCycleNext<CR>")
-keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>")
-
 keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.scripts/tmux-sessionizer<CR>")
