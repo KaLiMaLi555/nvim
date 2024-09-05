@@ -6,7 +6,6 @@ return {
             "nvim-telescope/telescope-fzf-native.nvim",
             build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
         },
-        "nvim-telescope/telescope-frecency.nvim",
     },
     keys = {
         { "<C-p>", require("telescope.builtin").git_files, { desc = "Git Files" } },
@@ -56,6 +55,5 @@ return {
         })
         require("telescope").load_extension("projects")
         require("telescope").load_extension("fzf")
-        require("telescope").load_extension("frecency")
     end,
 }
