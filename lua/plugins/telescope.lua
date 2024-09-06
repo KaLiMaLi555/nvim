@@ -9,11 +9,6 @@ return {
     },
     keys = {
         { "<C-p>", require("telescope.builtin").git_files, { desc = "Git Files" } },
-        {
-            "<leader>sp",
-            require("telescope").extensions.projects.projects,
-            desc = "Search Projects",
-        },
     },
 
     config = function()
@@ -28,7 +23,6 @@ return {
                 },
             },
         })
-        require("telescope").load_extension("projects")
         require("telescope").load_extension("fzf")
     end,
 }
