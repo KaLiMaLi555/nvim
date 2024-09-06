@@ -6,7 +6,7 @@ local keymap = vim.keymap
 local g = vim.g
 
 keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "No hightlight search" })
-keymap.set("i", "jj", "<Esc>", { desc = "Smooth escape" })
+keymap.set("i", "jk", "<Esc>", { desc = "Smooth escape" })
 keymap.set("t", "<Esc><Esc>", "<C-\\><C-n><cmd>q<CR>", { desc = "Exit terminal mode" })
 
 keymap.set("n", "ZZ", "<cmd>qa<CR>", { desc = "Exit nvim" })
@@ -29,5 +29,3 @@ keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz")
 keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
 
 keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
-keymap.set("n", "<C-f>", "<cmd>silent !tmux neww ~/.scripts/tmux-sessionizer<CR>")
