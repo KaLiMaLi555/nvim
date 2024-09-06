@@ -10,34 +10,9 @@ return {
     keys = {
         { "<C-p>", require("telescope.builtin").git_files, { desc = "Git Files" } },
         {
-            "<leader>pw",
-            function()
-                local word = vim.fn.expand("<cword>")
-                require("telescope.builtin").grep_string({ search = word })
-            end,
-            { desc = "Telescope search current word" },
-        },
-        {
-            "<leader>pW",
-            function()
-                local word = vim.fn.expand("<cWORD>")
-                require("telescope.builtin").grep_string({ search = word })
-            end,
-            { desc = "Telescope search current WORD" },
-        },
-        {
-            "<leader>pr",
+            "<leader>sp",
             require("telescope").extensions.projects.projects,
             { desc = "Search Projects" },
-        },
-        {
-            "<leader>ps",
-            function()
-                require("telescope.builtin").grep_string({
-                    search = vim.fn.input("Grep > "),
-                })
-            end,
-            { desc = "Search any word" },
         },
     },
 
