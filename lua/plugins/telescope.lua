@@ -12,7 +12,7 @@ return {
         {
             "<leader>sp",
             require("telescope").extensions.projects.projects,
-            { desc = "Search Projects" },
+            desc = "Search Projects",
         },
     },
 

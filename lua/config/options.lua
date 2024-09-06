@@ -29,3 +29,4 @@ opt.colorcolumn = "90"
 opt.backspace = "indent,eol,start"
 
 g.autoformat = false
+g.maplocalleader = ","

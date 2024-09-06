@@ -6,26 +6,26 @@ local keymap = vim.keymap
 local g = vim.g
 
 keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "No hightlight search" })
-keymap.set("i", "jk", "<Esc>", { desc = "Smooth escape" })
-keymap.set("t", "<Esc><Esc>", "<C-\\><C-n><cmd>q<CR>", { desc = "Exit terminal mode" })
+keymap.set("i", "jk", "<Esc>", { desc = "which_key_ignore" })
+keymap.set("t", "<Esc><Esc>", "<C-\\><C-n><cmd>q<CR>", { desc = "which_key_ignore" })
 
 keymap.set("n", "ZZ", "<cmd>qa<CR>", { desc = "Exit nvim" })
 
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", {desc = "which_key_ignore"})
+keymap.set("v", "K", ":m '<-2<CR>gv=gv",{desc = "which_key_ignore"})
 
-keymap.set("n", "J", "mzJ`z")
-keymap.set("n", "<C-d>", "<C-d>zz")
-keymap.set("n", "<C-u>", "<C-u>zz")
-keymap.set("n", "n", "nzzzv")
-keymap.set("n", "N", "Nzzzv")
+keymap.set("n", "J", "mzJ`z", {desc = "which_key_ignore"})
+keymap.set("n", "<C-d>", "<C-d>zz", {desc = "which_key_ignore"})
+keymap.set("n", "<C-u>", "<C-u>zz", {desc = "which_key_ignore"})
+keymap.set("n", "n", "nzzzv", {desc = "which_key_ignore"})
+keymap.set("n", "N", "Nzzzv", {desc = "which_key_ignore"})
 
-keymap.set("n", "<leader>Y", [["+Y]])
+keymap.set("n", "<leader>Y", [["+Y]], {desc = "which_key_ignore"})
 
-keymap.set({"n", "v"}, "<leader>d", [["_d]])
+keymap.set({"n", "v"}, "<leader>d", [["_d]], {desc = "which_key_ignore"})
 
-keymap.set("n", "W", "<cmd>q<CR>")
-keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz")
-keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz")
+keymap.set("n", "W", "<cmd>q<CR>", {desc = "which_key_ignore"})
+keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz", {desc = "which_key_ignore"})
+keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz", {desc = "which_key_ignore"})
 
-keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = "which_key_ignore"})

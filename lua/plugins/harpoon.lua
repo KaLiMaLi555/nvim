@@ -25,28 +25,28 @@ return {
                 desc = "Show harpoon file list",
             },
             {
-                "<leader>ha",
+                "<localleader>a",
                 function()
                     local harpoon = require("harpoon")
                     harpoon:list():select(1)
                 end,
             },
             {
-                "<leader>hs",
+                "<localleader>s",
                 function()
                     local harpoon = require("harpoon")
                     harpoon:list():select(2)
                 end,
             },
             {
-                "<leader>hd",
+                "<localleader>d",
                 function()
                     local harpoon = require("harpoon")
                     harpoon:list():select(3)
                 end,
             },
             {
-                "<leader>hf",
+                "<localleader>f",
                 function()
                     local harpoon = require("harpoon")
                     harpoon:list():select(4)

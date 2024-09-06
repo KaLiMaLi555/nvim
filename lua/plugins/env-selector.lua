@@ -1,3 +1,7 @@
+local wk = require("which-key")
+wk.add({
+    {"<leader>v", group = "Python Virtual environments"}
+})
 return {
     "linux-cultist/venv-selector.nvim",
     dependencies = {
