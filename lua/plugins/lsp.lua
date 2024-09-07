@@ -1,7 +1,7 @@
 local ensure_installed = {
     lang_servers = {
         "lua_ls",
-        "pyright",
+        -- "pyright",
         "ruff",
     },
     lang_tools = {
@@ -56,6 +56,30 @@ return {
                     })
                 end,
 
+                -- ["pyright"] = function()
+                --     local lspconfig = require("lspconfig")
+                --     lspconfig.pyright.setup({
+                --         pyright = {
+                --             settings = {
+                --                 pyright = {
+                --                     disableOrganizeImports = true, -- Using Ruff
+                --                 },
+                --                 python = {
+                --                     analysis = {
+                --                         ignore = { "*" }, -- Using Ruff
+                --                         typeCheckingMode = "off", -- Using mypy
+                --                     },
+                --                 },
+                --             },
+                --         },
+                --     })
+                -- end,
+
+                ["ruff_lsp"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.ruff_lsp.setup({})
+                end,
+
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup({
@@ -100,15 +124,8 @@ return {
             }),
         })
         vim.diagnostic.config({
-            -- update_in_insert = true,
-            float = {
-                focusable = false,
-                style = "minimal",
-                border = "rounded",
-                source = "always",
-                header = "",
-                prefix = "",
-            },
+            update_in_insert = false,
+            severity_sort = true,
         })
     end,
 }

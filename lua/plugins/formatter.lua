@@ -12,18 +12,17 @@ return {
             "<leader>cF",
             false,
         },
-        keys = {
-            {
-                "<leader>cf",
-                function()
-                    require("conform").format({
-                        formatters = { "injected" },
-                        timeout_ms = 3000,
-                    })
-                end,
-                mode = { "n", "v" },
-                desc = "Format Code using conform",
-            },
+        {
+            "<leader>cf",
+            function()
+                vim.notify("Formatting code with conform")
+                require("conform").format({
+                    formatters = nil,
+                    timeout_ms = 500,
+                })
+            end,
+            mode = { "n", "v" },
+            desc = "Format Code using conform",
         },
     },
 }
