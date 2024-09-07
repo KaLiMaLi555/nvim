@@ -30,3 +30,5 @@ opt.backspace = "indent,eol,start"
 
 g.autoformat = false
 g.maplocalleader = ","
+
+g.codeium_disable_bindings = 1
