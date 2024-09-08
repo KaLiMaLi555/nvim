@@ -2,7 +2,7 @@ local ensure_installed = {
     lang_servers = {
         "lua_ls",
         -- "pyright",
-        "ruff",
+        "ruff_lsp",
     },
     lang_tools = {
         "prettier",
@@ -75,6 +75,12 @@ return {
                 --         },
                 --     })
                 -- end,
+                ["ruff_lsp"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.ruff_lsp.setup({
+                        capabilities = capabilities,
+                    })
+                end,
 
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
