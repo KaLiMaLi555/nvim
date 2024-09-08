@@ -3,7 +3,6 @@
 -- Add any additional keymaps here
 
 local keymap = vim.keymap
-local g = vim.g
 
 keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "No hightlight search" })
 keymap.set("i", "jk", "<Esc>", { desc = "which_key_ignore" })
@@ -25,7 +24,7 @@ keymap.set("n", "<leader>Y", [["+Y]], {desc = "which_key_ignore"})
 keymap.set({"n", "v"}, "<leader>d", [["_d]], {desc = "which_key_ignore"})
 
 keymap.set("n", "W", "<cmd>q<CR>", {desc = "which_key_ignore"})
-keymap.set("n", "<leader>j", "<cmd>cnext<CR>zz", {desc = "which_key_ignore"})
-keymap.set("n", "<leader>k", "<cmd>cprev<CR>zz", {desc = "which_key_ignore"})
+keymap.set("n", "<localleader>j", "<cmd>cnext<CR>zz", {desc = "which_key_ignore"})
+keymap.set("n", "<localleader>k", "<cmd>cprev<CR>zz", {desc = "which_key_ignore"})
 
 keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = "which_key_ignore"})
