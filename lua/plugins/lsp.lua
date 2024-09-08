@@ -9,6 +9,7 @@ local ensure_installed = {
         "stylua",
         "isort",
         "black",
+        "mypy",
     },
 }
 
@@ -74,11 +75,6 @@ return {
                 --         },
                 --     })
                 -- end,
-
-                ["ruff_lsp"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.ruff_lsp.setup({})
-                end,
 
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
