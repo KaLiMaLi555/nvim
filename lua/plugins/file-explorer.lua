@@ -1,38 +1,7 @@
 return {
     {
         "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
-            "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-        },
-        keys = {
-            {
-                "<leader>e",
-                function()
-                    vim.cmd(
-                        "silent! Neotree position=float toggle=true dir=%:p:h reveal_file=%:p <CR>"
-                    )
-                end,
-                desc = "Open NeoTree File Explorer",
-            },
-            { "<leader>E", false },
-        },
-        config = function()
-            require("neo-tree").setup({
-                filesystem = {
-                    follow_current_file = {
-                        enabled = true,
-                    },
-                    window = {
-                        position = "float",
-                    },
-                    hijack_netrw_behavior = "disabled",
-                },
-            })
-        end,
+        enabled = false
     },
     {
         "stevearc/oil.nvim",
@@ -43,12 +12,13 @@ return {
                 keymaps = {
                     ["/"] = "actions.toggle_hidden",
                     ["<C-s>"] = false,
-                    ["s"] = {
+                    ["h"] = "actions.parent",
+                    ["|"] = {
                         "actions.select",
                         opts = { vertical = true },
                         desc = "Open the entry in a vertical split",
                     },
-                    ["h"] = {
+                    ["-"] = {
                         "actions.select",
                         opts = { horizontal = true },
                         desc = "Open the entry in a horizontal split",

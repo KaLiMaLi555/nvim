@@ -6,23 +6,91 @@ return {
             "nvim-telescope/telescope-fzf-native.nvim",
             build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
         },
+        "nvim-telescope/telescope-file-browser.nvim",
     },
     keys = {
         { "<C-p>", require("telescope.builtin").git_files, { desc = "Git Files" } },
+        {
+            "<leader>e",
+            function()
+                local telescope = require("telescope")
+
+                telescope.extensions.file_browser.file_browser({
+                    path = "%:p:h",
+                    cwd = vim.fn.expand("%:p:h"),
+                    respect_gitignore = false,
+                    hidden = true,
+                    grouped = true,
+                    previewer = false,
+                    initial_mode = "normal",
+                    layout_config = { height = 40 }
+                })
+            end
+        }
     },
 
-    config = function()
-        require("telescope").setup({
+    config = function(_, opts)
+        local telescope = require("telescope")
+        local actions = require("telescope.actions")
+        local fb_actions = require("telescope").extensions.file_browser.actions
+
+        opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
+            wrap_results = true,
+            layout_strategy = "horizontal",
+            prompt_postion = "top",
+            sorting_strategy = "ascending",
+            winblend = 0,
+            mappings = {
+                n = {}
+            }
+        })
+        opts.pickers = {
+            diagnostics = {
+                theme = "ivy",
+                initial_mode = "normal",
+                layout_config = {
+                    preview_cutoff = 9999
+                }
+            }
+        }
+        opts.extensions = {
+            file_browser = {
+                theme = "dropdown",
+                hijack_netrw = true,
+                mappings = {
+                    ["n"] = {
+                        ["N"] = fb_actions.create,
+                        ["h"] = fb_actions.goto_parent_dir,
+                        ["/"] = function()
+                            vim.cmd("startinsert")
+                        end,
+                        ["<C-n>"] = function(prompt_bufnr)
+                            for _ = 1, 10 do
+                                actions.move_selection_next(prompt_bufnr)
+                            end
+                        end,
+                        ["<C-p>"] = function(prompt_bufnr)
+                            for _ = 1, 10 do
+                                actions.move_selection_previous(prompt_bufnr)
+                            end
+                        end,
+                        ["<C-u>"] = actions.results_scrolling_up,
+                        ["<C-d>"] = actions.results_scrolling_down
+                    }
+                }
+            },
             extensions = {
                 fzf = {
-                    fuzzy = true, -- false will only do exact matching
+                    fuzzy = true,                   -- false will only do exact matching
                     override_generic_sorter = true, -- override the generic sorter
-                    override_file_sorter = true, -- override the file sorter
-                    case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+                    override_file_sorter = true,    -- override the file sorter
+                    case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
                     -- the default case_mode is "smart_case"
                 },
             },
-        })
+        }
+        telescope.setup(opts)
         require("telescope").load_extension("fzf")
+        require("telescope").load_extension("file_browser")
     end,
 }
