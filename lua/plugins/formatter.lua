@@ -17,7 +17,11 @@ return {
             function()
                 vim.notify("Formatting code with conform")
                 require("conform").format({
-                    formatters = nil,
+                    formatters = {
+                        black = {
+                            command = "black --line-length 79",
+                        }
+                    },
                     timeout_ms = 500,
                 })
             end,

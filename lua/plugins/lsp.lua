@@ -2,7 +2,8 @@ local ensure_installed = {
     lang_servers = {
         "lua_ls",
         -- "pyright",
-        "ruff_lsp",
+        "pylsp",
+        -- "ruff",
     },
     lang_tools = {
         "prettier",
@@ -53,35 +54,10 @@ return {
             handlers = {
                 function(server_name) -- default handler (optional)
                     require("lspconfig")[server_name].setup({
+                        on_attach = require("lazyvim.plugins.lsp.keymaps").on_attach,
                         capabilities = capabilities,
                     })
                 end,
-
-                -- ["pyright"] = function()
-                --     local lspconfig = require("lspconfig")
-                --     lspconfig.pyright.setup({
-                --         pyright = {
-                --             settings = {
-                --                 pyright = {
-                --                     disableOrganizeImports = true, -- Using Ruff
-                --                 },
-                --                 python = {
-                --                     analysis = {
-                --                         ignore = { "*" }, -- Using Ruff
-                --                         typeCheckingMode = "off", -- Using mypy
-                --                     },
-                --                 },
-                --             },
-                --         },
-                --     })
-                -- end,
-                ["ruff_lsp"] = function()
-                    local lspconfig = require("lspconfig")
-                    lspconfig.ruff_lsp.setup({
-                        capabilities = capabilities,
-                    })
-                end,
-
                 ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup({
@@ -126,7 +102,7 @@ return {
             }),
         })
         vim.diagnostic.config({
-            update_in_insert = false,
+            update_in_insert = true,
             severity_sort = true,
         })
     end,

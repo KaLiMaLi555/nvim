@@ -24,6 +24,7 @@ keymap.set("n", "<leader>Y", [["+Y]], {desc = "which_key_ignore"})
 keymap.set({"n", "v"}, "<leader>d", [["_d]], {desc = "which_key_ignore"})
 
 keymap.set("n", "W", "<cmd>q<CR>", {desc = "which_key_ignore"})
+keymap.set("n", "<localleader>w", "<cmd>bd<CR>", {desc = "which_key_ignore"})
 keymap.set("n", "<localleader>j", "<cmd>cnext<CR>zz", {desc = "which_key_ignore"})
 keymap.set("n", "<localleader>k", "<cmd>cprev<CR>zz", {desc = "which_key_ignore"})
 

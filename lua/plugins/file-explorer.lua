@@ -21,7 +21,6 @@ return {
             { "<leader>E", false },
         },
         config = function()
-            vim.notify("NeoTree Loaded", vim.log.levels.INFO, { title = "NeoTree" })
             require("neo-tree").setup({
                 filesystem = {
                     follow_current_file = {

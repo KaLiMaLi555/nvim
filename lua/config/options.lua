@@ -24,7 +24,7 @@ opt.undofile = true
 
 opt.signcolumn = "yes"
 opt.isfname:append("@-@")
-opt.colorcolumn = "90"
+opt.colorcolumn = "79"
 
 opt.backspace = "indent,eol,start"
 
