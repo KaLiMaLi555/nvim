@@ -32,3 +32,6 @@ g.autoformat = false
 g.maplocalleader = ","
 
 g.codeium_disable_bindings = 1
+
+g.loaded_netrwPlugin = 1
+g.loaded_netrw = 1

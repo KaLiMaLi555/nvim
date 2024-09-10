@@ -26,4 +26,8 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = {},
     },
+    {
+        "akinsho/bufferline.nvim",
+        enabled = false
+    },
 }
