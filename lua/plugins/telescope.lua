@@ -56,6 +56,7 @@ return {
         opts.extensions = {
             file_browser = {
                 theme = "dropdown",
+                initial_mode = "normal",
                 hijack_netrw = true,
                 mappings = {
                     ["n"] = {
