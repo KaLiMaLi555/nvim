@@ -34,7 +34,7 @@ return {
         local actions = require("telescope.actions")
         local fb_actions = require("telescope").extensions.file_browser.actions
 
-        opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
+        opts.defaults = vim.tbl_deep_extend("force", opts.defaults or {}, {
             wrap_results = true,
             layout_strategy = "horizontal",
             prompt_postion = "top",
@@ -61,6 +61,9 @@ return {
                     ["n"] = {
                         ["N"] = fb_actions.create,
                         ["h"] = fb_actions.goto_parent_dir,
+                        ["dd"] = fb_actions.remove,
+                        ["yy"] = fb_actions.copy,
+                        ["m"] = fb_actions.move,
                         ["/"] = function()
                             vim.cmd("startinsert")
                         end,
