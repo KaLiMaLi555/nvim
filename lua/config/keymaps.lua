@@ -8,6 +8,8 @@ keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "No hightlight search" 
 keymap.set("i", "jk", "<Esc>", { desc = "which_key_ignore" })
 keymap.set("t", "<Esc><Esc>", "<C-\\><C-n><cmd>q<CR>", { desc = "which_key_ignore" })
 
+keymap.set("n", "dw", "vbd", {desc = "which_key_ignore"})
+
 keymap.set("n", "ZZ", "<cmd>qa<CR>", { desc = "Exit nvim" })
 
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", {desc = "which_key_ignore"})
@@ -29,3 +31,5 @@ keymap.set("n", "<localleader>j", "<cmd>cnext<CR>zz", {desc = "which_key_ignore"
 keymap.set("n", "<localleader>k", "<cmd>cprev<CR>zz", {desc = "which_key_ignore"})
 
 keymap.set("n", "<leader>S", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], {desc = "which_key_ignore"})
+
+require("config.discipline").run({max_keypress_allowed = 10})
