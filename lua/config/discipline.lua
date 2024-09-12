@@ -5,7 +5,7 @@ function M.run(args)
     local id
     local ok = true
 
-    for _, key in ipairs({ "h", "j", "k", "l", "w", "b" }) do
+    for _, key in ipairs({ "h", "j", "k", "l" }) do
         local count = 0
         local timer = assert(vim.loop.new_timer())
         local map = key
