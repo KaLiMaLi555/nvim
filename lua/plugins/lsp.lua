@@ -81,8 +81,19 @@ return {
 
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
         cmp.setup({
+            window = {
+                completion = cmp.config.window.bordered {
+                    border = "single",
+                    winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+                },
+                documentation = cmp.config.window.bordered {
+                    documentation = {
+                        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+                    },
+                },
+            },
             completion = {
-                completeopt = "menu,menuone,preview,noselect",
+                completeopt = 'menu,menuone,preview,noinsert',
             },
             expand = function(args)
                 require("luasnip").lsp_expand(args.body)
@@ -96,71 +107,15 @@ return {
                 ["<C-Space>"] = cmp.mapping.complete(),
             }),
             sources = cmp.config.sources({
-                { name = "nvim_lsp" },
                 { name = "luasnip" },
+                { name = "nvim_lsp" },
                 { name = "buffer" },
                 { name = "path" },
             }),
         })
         vim.diagnostic.config({
-            update_in_insert = true,
+            update_in_insert = false,
             severity_sort = true,
         })
     end,
 }
-
---[[ return {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-        "hrsh7th/cmp-buffer",
-        "hrsh7th/cmp-path",
-        {
-            "L3MON4D3/LuaSnip",
-            version = "v2.3.0",
-            build = "make install_jsregexp",
-        },
-        "saadparwaiz1/cmp_luasnip",
-        "rafamadriz/friendly-snippets",
-        "onsails/lspkind.nvim",
-    },
-    config = function()
-        local cmp = require("cmp")
-        local luasnip = require("luasnip")
-        local lspkind = require("lspkind")
-
-        require("luasnip.loaders.from_vscode").lazy_load()
-        cmp.setup({
-            completion = {
-                completeopt = "menu,menuone,preview,noselect",
-            },
-            snippet = {
-                expand = function(args)
-                    luasnip.lsp_expand(args.body)
-                end,
-            },
-            mapping = cmp.mapping.preset.insert({
-                ["<C-p>"] = cmp.mapping.select_prev_item(),
-                ["<C-n>"] = cmp.mapping.select_next_item(),
-                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-                ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-y>"] = cmp.mapping.complete(),
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),
-            }),
-            sources = cmp.config.sources({
-                { name = "nvim_lsp" },
-                { name = "luasnip" },
-                { name = "buffer" },
-                { name = "path" },
-            }),
-            formatting = {
-                fields = { "abbr", "kind", "menu" },
-                expandable_indicator = true,
-                format = lspkind.cmp_format({
-                    maxwidth = 100,
-                    ellipsis_char = "...",
-                }),
-            },
-        })
-    end,
-} ]]
