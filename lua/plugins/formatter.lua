@@ -6,6 +6,12 @@ return {
             ["lua"] = { "stylua" },
             ["python"] = { "isort", "black" },
         },
+        formatters = {
+            black = {
+                command = "black --line-length 79",
+            },
+        },
+        timeout_ms = 500,
     },
     keys = {
         {
@@ -16,14 +22,7 @@ return {
             "<leader>cf",
             function()
                 vim.notify("Formatting code with conform")
-                require("conform").format({
-                    formatters = {
-                        black = {
-                            command = "black --line-length 79",
-                        }
-                    },
-                    timeout_ms = 500,
-                })
+                require("conform").format()
             end,
             mode = { "n", "v" },
             desc = "Format Code using conform",

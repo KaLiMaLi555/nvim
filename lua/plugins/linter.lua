@@ -6,7 +6,7 @@ return {
         local linters = require("lint").linters
 
         lint.linters_by_ft = {
-            ["python"] = { "mypy" },
+            ["python"] = { "mypy", "pylint" },
         }
 
         linters.mypy.args = {

@@ -11,6 +11,7 @@ local ensure_installed = {
         "isort",
         "black",
         "mypy",
+        "pylint"
     },
 }
 
@@ -56,6 +57,25 @@ return {
                     require("lspconfig")[server_name].setup({
                         on_attach = require("lazyvim.plugins.lsp.keymaps").on_attach,
                         capabilities = capabilities,
+                    })
+                end,
+                ["pylsp"] = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.pylsp.setup({
+                        on_attach = require("lazyvim.plugins.lsp.keymaps").on_attach,
+                        capabilities = capabilities,
+                        flags = {
+                            debounce_text_changes = 200,
+                        },
+                        settings = {
+                            pylsp = {
+                                plugins = {
+                                    rope_autoimport = {
+                                        enabled = true,
+                                    }
+                                },
+                            },
+                        },
                     })
                 end,
                 ["lua_ls"] = function()
