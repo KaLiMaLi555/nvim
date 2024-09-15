@@ -14,14 +14,6 @@ return {
         config = true,
     },
     {
-        "lukas-reineke/indent-blankline.nvim",
-        event = { "BufReadPre", "BufNewFile" },
-        main = "ibl",
-        opts = {
-            indent = { char = "┃" },
-        },
-    },
-    {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = {},
