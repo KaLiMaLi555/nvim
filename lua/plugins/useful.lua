@@ -19,6 +19,10 @@ return {
         opts = {},
     },
     {
+        "laytan/cloak.nvim",
+        config = true
+    },
+    {
         "akinsho/bufferline.nvim",
         enabled = false
     },
