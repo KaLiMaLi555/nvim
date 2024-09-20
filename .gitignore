@@ -8,3 +8,4 @@ foo.*
 data
 *.json
 *.json
+lazy_lock.json
