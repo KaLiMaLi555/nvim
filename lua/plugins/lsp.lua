@@ -1,9 +1,8 @@
 local ensure_installed = {
     lang_servers = {
         "lua_ls",
-        -- "pyright",
         "pylsp",
-        -- "ruff",
+        "ts_ls"
     },
     lang_tools = {
         "prettier",
@@ -11,7 +10,8 @@ local ensure_installed = {
         "isort",
         "black",
         "mypy",
-        "pylint"
+        "pylint",
+        "eslint"
     },
 }
 
@@ -70,6 +70,9 @@ return {
                         settings = {
                             pylsp = {
                                 plugins = {
+                                    pycodestyle = {
+                                        enabled = false,
+                                    },
                                     rope_autoimport = {
                                         enabled = true,
                                     }

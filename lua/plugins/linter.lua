@@ -7,6 +7,7 @@ return {
 
         lint.linters_by_ft = {
             ["python"] = { "mypy", "pylint" },
+            ["typescript"] = { "eslint" },
         }
 
         linters.mypy.args = {
