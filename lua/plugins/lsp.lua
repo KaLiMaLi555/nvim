@@ -2,7 +2,7 @@ local ensure_installed = {
     lang_servers = {
         "lua_ls",
         "pylsp",
-        "ts_ls"
+        "ts_ls",
     },
     lang_tools = {
         "prettier",
@@ -11,7 +11,7 @@ local ensure_installed = {
         "black",
         "mypy",
         "pylint",
-        "eslint"
+        "eslint",
     },
 }
 
@@ -25,6 +25,7 @@ return {
 
         "hrsh7th/cmp-nvim-lsp",
         { "antosha417/nvim-lsp-file-operations", config = true },
+        "lukas-reineke/cmp-under-comparator",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
@@ -46,6 +47,7 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities()
         )
+        capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = false
 
         require("fidget").setup({})
         require("mason").setup()
@@ -70,12 +72,15 @@ return {
                         settings = {
                             pylsp = {
                                 plugins = {
+                                    mccabe = {
+                                        enabled = false,
+                                    },
                                     pycodestyle = {
                                         enabled = false,
                                     },
                                     rope_autoimport = {
                                         enabled = true,
-                                    }
+                                    },
                                 },
                             },
                         },
@@ -105,18 +110,27 @@ return {
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
         cmp.setup({
             window = {
-                completion = cmp.config.window.bordered {
+                completion = cmp.config.window.bordered({
                     border = "single",
                     winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
-                },
-                documentation = cmp.config.window.bordered {
+                }),
+                documentation = cmp.config.window.bordered({
                     documentation = {
-                        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+                        border = {
+                            "╭",
+                            "─",
+                            "╮",
+                            "│",
+                            "╯",
+                            "─",
+                            "╰",
+                            "│",
+                        },
                     },
-                },
+                }),
             },
             completion = {
-                completeopt = 'menu,menuone,preview,noinsert',
+                completeopt = "menu,menuone,preview,noinsert",
             },
             expand = function(args)
                 require("luasnip").lsp_expand(args.body)
@@ -135,6 +149,19 @@ return {
                 { name = "buffer" },
                 { name = "path" },
             }),
+            sorting = {
+                comparators = {
+                    cmp.config.compare.offset,
+                    cmp.config.compare.exact,
+                    cmp.config.compare.score,
+                    require("cmp-under-comparator").under,
+                    cmp.config.compare.kind,
+                    cmp.config.compare.sort_text,
+                    cmp.config.compare.length,
+                    cmp.config.compare.order,
+                },
+                priority_weight = 1,
+            },
         })
         vim.diagnostic.config({
             update_in_insert = false,
