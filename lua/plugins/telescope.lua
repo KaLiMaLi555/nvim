@@ -31,7 +31,7 @@ return {
 			"<CMD>Telescope git_files<CR>",
 		},
 		{
-			"<localleader>f",
+			"<localleader>p",
 			"<CMD>Telescope find_files<CR>",
 		}
     },
