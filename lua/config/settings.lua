@@ -18,6 +18,7 @@ local opt_settings = {
 	backspace = "indent,eol,start",
 	clipboard = "unnamedplus",
 	guicursor = "n-v-c-i:block",
+	laststatus = 3,
 }
 
 local global_settings = {
