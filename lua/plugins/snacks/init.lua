@@ -9,6 +9,7 @@ return {
 			dashboard = require("plugins.snacks.dashboard"),
 			lazygit = require("plugins.snacks.lazygit"),
 			statuscolumn = require("plugins.snacks.statuscolumn"),
+			notifier = { enabled = true },
 		},
 		keys = {
 			{ "<localleader>g", function() Snacks.lazygit() end },
