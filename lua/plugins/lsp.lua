@@ -10,6 +10,7 @@ return {
 			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
 			"mason-org/mason.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
 			"lukas-reineke/cmp-under-comparator",
 			"j-hui/fidget.nvim",
 			"onsails/lspkind-nvim",

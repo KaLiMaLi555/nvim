@@ -18,4 +18,8 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" },
         opts = {},
     },
+	{
+		"laytan/cloak.nvim",
+		config = true,
+	},
 }
