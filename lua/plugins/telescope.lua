@@ -33,7 +33,38 @@ return {
 		{
 			"<localleader>p",
 			"<CMD>Telescope find_files<CR>",
-		}
+		},
+		{
+			"<localleader>fw",
+			function ()
+				local builtin = require('telescope.builtin')
+				local word = vim.fn.expand("<cword>")
+				builtin.grep_string({ search = word })
+			end
+		},
+		{
+			"<localleader>fW",
+			function ()
+				local builtin = require('telescope.builtin')
+				local word = vim.fn.expand("<cWORD>")
+				builtin.grep_string({ search = word })
+			end
+		},
+		{
+			"<localleader>gs",
+			function ()
+				local builtin = require('telescope.builtin')
+				local word = vim.fn.input("Grep > ")
+				builtin.grep_string({ search = word })
+			end
+		},
+		{
+			"<localleader>vh",
+			function ()
+				local builtin = require('telescope.builtin')
+				builtin.help_tags()
+			end,
+		},
     },
 	config = function(_, opts)
         local telescope = require("telescope")
