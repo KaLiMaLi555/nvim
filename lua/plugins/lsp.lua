@@ -168,7 +168,7 @@ return {
 					}),
 					["<C-b>"] = cmp.mapping.scroll_docs(-4),
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
-					["<C-c>"] = cmp.mapping.close(),
+					-- ["<C-c>"] = cmp.mapping.close(),
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
