@@ -22,4 +22,10 @@ return {
 		"laytan/cloak.nvim",
 		config = true,
 	},
+	{
+		"antoinemadec/FixCursorHold.nvim",
+		config = function()
+			vim.gcursorhold_updatetime = 10
+		end,
+	}
 }

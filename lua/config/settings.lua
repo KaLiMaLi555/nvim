@@ -2,7 +2,7 @@ local opt_settings = {
 	termguicolors = true,
 	number = true,
 	relativenumber = true,
-	scrolloff = 15,
+	scrolloff = 12,
 	hlsearch = true,
 	incsearch = true,
 	shiftwidth = 4,
@@ -19,6 +19,7 @@ local opt_settings = {
 	clipboard = "unnamedplus",
 	guicursor = "n-v-c-i:block",
 	laststatus = 3,
+	updatetime = 50
 }
 
 local global_settings = {
